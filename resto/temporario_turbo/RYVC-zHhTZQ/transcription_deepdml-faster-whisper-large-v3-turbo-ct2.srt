@@ -1,0 +1,212 @@
+1
+00:00:00,000 --> 00:00:09,280
+ As pessoas que trabalham em uma equipe de desenvolvimento de software com frequência
+
+2
+00:00:09,280 --> 00:00:14,520
+ tem que integrar, juntar as contribuições que elas individualmente fazem para a construção
+
+3
+00:00:14,520 --> 00:00:15,520
+ do sistema.
+
+4
+00:00:15,520 --> 00:00:21,280
+ Elas normalmente fazem isso através de comandos como git-mag, git-rebase, git-sharypeak,
+
+5
+00:00:21,280 --> 00:00:26,000
+ que sinalizam conflitos quando as pessoas tentam mudar a mesma parte do código do sistema,
+
+6
+00:00:26,000 --> 00:00:30,960
+ como por exemplo quando duas pessoas tentam alterar linhas consecutivas de um mesmo programa,
+
+7
+00:00:30,960 --> 00:00:33,320
+ de um mesmo método, de uma mesma classe.
+
+8
+00:00:33,320 --> 00:00:39,760
+ Mas muitas vezes essas mudanças feitas individualmente por essas pessoas, apesar de serem conflitantes,
+
+9
+00:00:39,760 --> 00:00:46,360
+ não são detectadas por essas ferramentas, que infelizmente são limitadas e passam batidas
+
+10
+00:00:46,360 --> 00:00:52,440
+ e integram as contribuições de forma equivocada, o que eventualmente leva a uma falha do sistema
+
+11
+00:00:52,440 --> 00:00:57,400
+ quando ele estiver sendo usado por seus usuários, trazendo consequências negativas para muita
+
+12
+00:00:57,400 --> 00:00:59,760
+ gente, muitas vezes consequências sérias.
+
+13
+00:00:59,760 --> 00:01:05,600
+ Para evitar essas limitações dessas ferramentas atuais de integração de código, nós no
+
+14
+00:01:05,600 --> 00:01:11,640
+ SIM, no SPG, em colaboração com pesquisadores aqui de CM1, nos Estados Unidos, pesquisamos
+
+15
+00:01:11,640 --> 00:01:17,560
+ e desenvolvemos ferramentas complementares que podem ser acopladas ao Git para detectar esses
+
+16
+00:01:17,560 --> 00:01:22,440
+ problemas, esses conflitos e assim evitar que eles cheguem aos usuários finais.
+
+17
+00:01:22,440 --> 00:01:27,200
+ A gente faz isso usando uma combinação de técnicas de análise estática e dinâmica
+
+18
+00:01:27,200 --> 00:01:32,560
+ de código, que assim conseguem detectar os chamados conflitos semânticos, que são justamente
+
+19
+00:01:32,560 --> 00:01:37,960
+ causados quando pessoas diferentes de uma mesma equipe alteram partes diferentes do código,
+
+20
+00:01:37,960 --> 00:01:43,720
+ mas essas partes são dependentes e precisam ser ajustadas antes de serem integradas, só
+
+21
+00:01:43,720 --> 00:01:47,320
+ que as pessoas individualmente não têm conhecimento disso.
+
+22
+00:01:47,320 --> 00:01:53,140
+ As nossas ferramentas vão justamente nessa direção de sinalizar a necessidade desses
+
+23
+00:01:53,140 --> 00:01:59,820
+ ajustes adicionais, para que o defeito possa ser antecipado e a falha do sistema evitada.
+
+24
+00:01:59,820 --> 00:02:05,220
+ Isso é especialmente importante porque esse tipo de defeito, causado pela interferência
+
+25
+00:02:05,220 --> 00:02:10,900
+ entre mudanças feitas por duas pessoas, é muito mais difícil de ser detectado e corrigido
+
+26
+00:02:10,900 --> 00:02:15,140
+ do que os defeitos que são individualmente causados por apenas uma pessoa.
+
+27
+00:02:17,320 --> 00:02:19,320
+ Obrigado.
+
+28
+00:02:19,320 --> 00:02:20,320
+ Obrigado.
+
+29
+00:02:20,320 --> 00:02:21,320
+ Obrigado.
+
+30
+00:02:21,320 --> 00:02:22,320
+ Obrigado.
+
+31
+00:02:22,320 --> 00:02:23,320
+ Obrigado.
+
+32
+00:02:23,320 --> 00:02:25,320
+ Obrigado.
+
+33
+00:02:25,320 --> 00:02:26,320
+ Obrigado.
+
+34
+00:02:26,320 --> 00:02:27,320
+ Obrigado.
+
+35
+00:02:27,320 --> 00:02:28,320
+ Obrigado.
+
+36
+00:02:28,320 --> 00:02:29,320
+ Obrigado.
+
+37
+00:02:29,320 --> 00:02:30,320
+ Obrigado.
+
+38
+00:02:30,320 --> 00:02:31,320
+ Obrigado.
+
+39
+00:02:31,320 --> 00:02:32,320
+ Obrigado.
+
+40
+00:02:32,320 --> 00:02:33,320
+ Obrigado.
+
+41
+00:02:33,320 --> 00:02:34,320
+ Obrigado.
+
+42
+00:02:34,320 --> 00:02:35,320
+ Obrigado.
+
+43
+00:02:35,320 --> 00:02:36,320
+ Obrigado.
+
+44
+00:02:36,320 --> 00:02:37,320
+ Obrigado.
+
+45
+00:02:37,320 --> 00:02:38,320
+ Obrigado.
+
+46
+00:02:38,320 --> 00:02:39,320
+ Obrigado.
+
+47
+00:02:39,320 --> 00:02:40,320
+ Obrigado.
+
+48
+00:02:40,320 --> 00:02:41,320
+ Obrigado.
+
+49
+00:02:41,320 --> 00:02:42,320
+ Obrigado.
+
+50
+00:02:42,320 --> 00:02:43,320
+ Obrigado.
+
+51
+00:02:43,320 --> 00:02:44,320
+ Obrigado.
+
+52
+00:02:44,320 --> 00:02:45,320
+ Obrigado.
+
+53
+00:02:45,320 --> 00:02:46,320
+ Obrigado.
+

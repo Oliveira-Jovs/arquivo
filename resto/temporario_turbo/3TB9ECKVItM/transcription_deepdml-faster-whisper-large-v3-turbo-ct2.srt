@@ -1,0 +1,1100 @@
+1
+00:00:00,720 --> 00:00:06,720
+ Olá, sejam muito bem-vindos a mais uma aula do curso de Linguagem de Programação Específica para IA.
+
+2
+00:00:07,980 --> 00:00:11,780
+ Hoje iremos explorar mais alguns conceitos de scheduling.
+
+3
+00:00:12,640 --> 00:00:15,040
+ O caso do conceito de hoje será o unroll.
+
+4
+00:00:15,760 --> 00:00:22,200
+ Ele, como a gente viu naquele exemplo didático com a geração de números de Fibonacci,
+
+5
+00:00:22,200 --> 00:00:29,540
+ pode ser utilizado para diminuir o número de iterações a custo do tamanho do corpo do loop.
+
+6
+00:00:29,780 --> 00:00:34,560
+ Então nós vamos aumentar o corpo do loop a fim de diminuir o número de iterações.
+
+7
+00:00:35,440 --> 00:00:48,680
+ A gente viu que ele tem um efeito de como se executasse múltiplas iterações em o que seria uma só no loop transformado.
+
+8
+00:00:48,680 --> 00:00:53,800
+ Ele pode ser útil para quando a gente tem pixels que manipulam dados incomuns.
+
+9
+00:00:54,600 --> 00:01:02,100
+ E um padrão específico que a gente vai ver frequentemente, que às vezes é útil utilizar o unroll,
+
+10
+00:01:02,760 --> 00:01:08,660
+ é quando a gente tem mais de um canal e quer simplesmente executar o assign desses canais, certo?
+
+11
+00:01:08,660 --> 00:01:13,200
+ Em sequência, então um atrás do outro sem uma criação de um novo loop.
+
+12
+00:01:13,200 --> 00:01:23,680
+ Ele tem duas sintaxes, a primeira delas é só passando uma var para dentro desse unroll e a outra var em um fator.
+
+13
+00:01:24,720 --> 00:01:27,320
+ Ele vai ser utilizado com bound ou com split.
+
+14
+00:01:27,760 --> 00:01:35,020
+ No caso aqui, quando a gente quer fazer um unroll, por exemplo, de uma var que não sejam esses canais,
+
+15
+00:01:35,760 --> 00:01:39,800
+ a gente normalmente precisa fazer um split dessa var, certo?
+
+16
+00:01:39,800 --> 00:01:49,860
+ E a gente faz o split com um fator e depois aplica um roll nessa var que vai estar ali bem interna no alinhamento do loop, certo?
+
+17
+00:01:50,940 --> 00:01:57,860
+ Uma outra opção é você simplesmente fazer essa sintaxe aqui, emroll, passando o var e depois o fator.
+
+18
+00:01:58,700 --> 00:02:06,140
+ A diferença é que você vai ficar escondido o split, certo?
+
+19
+00:02:06,539 --> 00:02:07,840
+ Ele vai esconder esse split.
+
+20
+00:02:07,840 --> 00:02:14,300
+ Para o exemplo dos canais, o que a gente vai estar utilizando é esse bound aqui.
+
+21
+00:02:14,880 --> 00:02:25,120
+ Então, nós vamos, na verdade, utilizar tanto o reorder como o bound para mover os canais para a parte mais interna do loop, certo?
+
+22
+00:02:25,120 --> 00:02:32,800
+ O bound, ele vai dizer para o relide que a minha variável do canal é limitada entre 0 a 3, certo?
+
+23
+00:02:32,900 --> 00:02:38,340
+ Então, ali, RGB, a gente sempre vai trabalhar em relide com o mínimo e o extent, né?
+
+24
+00:02:38,340 --> 00:02:42,160
+ Que é a extensão daquela dimensão.
+
+25
+00:02:42,540 --> 00:02:48,320
+ Então, a gente vai passar para o bound a variável, o mínimo, que vai ser 0, e o extent, que vai ser 3.
+
+26
+00:02:48,320 --> 00:02:49,420
+ E aqui são 3 canais.
+
+27
+00:02:51,600 --> 00:02:53,060
+ E a partir disso, né?
+
+28
+00:02:53,780 --> 00:03:00,019
+ Diferentemente da sintaxe aí com o split, a gente sabe os limites que esse loop vai percorrer.
+
+29
+00:03:00,100 --> 00:03:01,780
+ A gente sabe quais os limites da minha variável.
+
+30
+00:03:02,459 --> 00:03:07,280
+ Então, a gente utiliza o bound para passar essa informação para o onroll depois.
+
+31
+00:03:07,280 --> 00:03:15,820
+ No caso, onde a gente não sabe a dimensão do loop, que vai ser nos casos onde a gente tem uma variável que não seja aquela dos canais, por exemplo,
+
+32
+00:03:16,620 --> 00:03:19,980
+ a gente vai ter que estar utilizando essa sintaxe com o splitting.
+
+33
+00:03:22,560 --> 00:03:25,520
+ Iremos agora verificar na prática a utilização do onroll.
+
+34
+00:03:26,520 --> 00:03:31,700
+ Eu tenho aqui um exemplo onde eu estou aplicando um efeito sepia em uma imagem, certo?
+
+35
+00:03:31,800 --> 00:03:36,360
+ Então, nós temos um efeito de falta antiga sendo aplicado.
+
+36
+00:03:37,280 --> 00:03:44,080
+ Primeiramente, mostrando o protótipo de Python, para a gente ter um guia da temporização, certo?
+
+37
+00:03:44,180 --> 00:03:46,700
+ Do runtime dessa pipeline.
+
+38
+00:03:47,800 --> 00:03:49,660
+ Eu vou rodar o protótipo aqui.
+
+39
+00:03:58,140 --> 00:04:00,740
+ E nós temos, em Python,
+
+40
+00:04:00,740 --> 00:04:11,400
+ A velocidade de 20, no caso, ele está demorando 23 milissegundos, no caso, 24 milissegundos,
+
+41
+00:04:11,580 --> 00:04:14,640
+ para completar a execução da pipeline na média.
+
+42
+00:04:15,120 --> 00:04:20,079
+ No pior caso, está em 46 milissegundos, e no melhor caso, 20 milissegundos.
+
+43
+00:04:20,760 --> 00:04:28,340
+ A pipeline é simples, ela só envolve multiplicar os canais da imagem por diversos fatores, certo?
+
+44
+00:04:28,340 --> 00:04:34,360
+ Cada canal novo, ele vai ter um conjunto de três fatores associados a ele, certo?
+
+45
+00:04:34,440 --> 00:04:37,640
+ Então, cada novo canal da minha imagem, cada novo RGB,
+
+46
+00:04:38,140 --> 00:04:42,060
+ é uma ponderação dos RGB anteriores, iniciais.
+
+47
+00:04:43,500 --> 00:04:46,160
+ Após isso, eu faço o merging desses canais,
+
+48
+00:04:47,300 --> 00:04:51,800
+ converto para Uint8 a versão clipada dele,
+
+49
+00:04:51,880 --> 00:04:53,720
+ ou seja, mantida ali entre 0 e 35.
+
+50
+00:04:53,720 --> 00:05:01,040
+ Eu tenho aqui também um protótipo implementado em C++, com o OpenCV.
+
+51
+00:05:03,940 --> 00:05:07,740
+ Então, é a nossa segunda referência de tempo,
+
+52
+00:05:07,740 --> 00:05:17,080
+ e nós esperamos um tempo pouco menor de execução em relação ao Python.
+
+53
+00:05:23,720 --> 00:05:38,060
+ Já obtemos aqui, o resultado do OpenCV,
+
+54
+00:05:38,300 --> 00:05:39,740
+ está igualzinho ao do Python,
+
+55
+00:05:40,280 --> 00:05:48,340
+ e no caso, a gente tem aqui 0,3 milissegundos na média, certo?
+
+56
+00:05:48,340 --> 00:05:53,160
+ Em comparação ao Python, com os seus 23 milissegundos.
+
+57
+00:05:54,460 --> 00:05:57,340
+ No melhor caso, a gente tem 0,19 milissegundos,
+
+58
+00:05:58,260 --> 00:06:01,160
+ e no pior caso, 4 milissegundos, certo?
+
+59
+00:06:01,220 --> 00:06:03,940
+ Então, vai bem mais rápido que o Python.
+
+60
+00:06:04,580 --> 00:06:08,040
+ Vamos então ver se a gente consegue chegar mais rápido com o Raylide.
+
+61
+00:06:08,040 --> 00:06:16,660
+ Então, eu tenho aqui a pipeline implementada no Raylide, com o Generator,
+
+62
+00:06:17,240 --> 00:06:22,160
+ e com um parâmetro aqui para selecionar o Schedule customizado, certo?
+
+63
+00:06:22,160 --> 00:06:29,880
+ E aí, o que a gente tem aqui é esse Mux.
+
+64
+00:06:31,540 --> 00:06:38,340
+ E aí, no caso, a gente vai poder observar uma das maiores utilidades do Unroll,
+
+65
+00:06:38,700 --> 00:06:44,340
+ que é a eliminação do Select para fazer esse Assign dos canais, certo?
+
+66
+00:06:44,340 --> 00:06:47,220
+ Então, a gente tem um Mux aqui, e a gente consegue converter,
+
+67
+00:06:48,060 --> 00:06:52,120
+ ao invés de ter essa multiplexação,
+
+68
+00:06:52,200 --> 00:06:56,920
+ a gente vai converter isso daqui para executar o Assign um depois do outro ali,
+
+69
+00:06:57,560 --> 00:07:00,800
+ dentro do loop mais interno da minha pipeline.
+
+70
+00:07:03,980 --> 00:07:11,060
+ Então, eu tenho aqui primeiro a utilização com o paralelismo apenas sendo aplicado no Y,
+
+71
+00:07:11,200 --> 00:07:12,020
+ na história dessa imagem.
+
+72
+00:07:12,020 --> 00:07:16,919
+ Então, nós vamos verificar, ainda sem o Unroll, certo?
+
+73
+00:07:16,979 --> 00:07:19,880
+ Uma aplicação mais simples de Skyload.
+
+74
+00:07:31,780 --> 00:07:36,299
+ Ao executar isso aqui, a gente obtém um código também bem mais rápido que o Python,
+
+75
+00:07:36,620 --> 00:07:41,140
+ mas mais lento que o OPCV.
+
+76
+00:07:41,140 --> 00:07:46,000
+ Inclusive, o melhor tempo dessa execução em Haylite,
+
+77
+00:07:46,099 --> 00:07:54,180
+ é estar assinando a média em relação ao OpenCV, certo?
+
+78
+00:07:54,180 --> 00:08:06,320
+ Nós podemos, então, agora verificar o StateWinFile, que eu tenho já carregado aqui,
+
+79
+00:08:06,400 --> 00:08:08,040
+ eu só preciso recarregar essa página,
+
+80
+00:08:09,220 --> 00:08:10,400
+ vamos fechar o Assembly,
+
+81
+00:08:10,400 --> 00:08:17,960
+ e verificar aqui, né, que a gente tem esse Mox aqui dentro, internamente, no,
+
+82
+00:08:18,720 --> 00:08:23,880
+ a gente tem aqui o Y sendo executado em paralelo,
+
+83
+00:08:25,360 --> 00:08:32,180
+ e dentro do X, na parte mais interna, a gente tem esse Mox aqui, certo?
+
+84
+00:08:32,180 --> 00:08:42,920
+ Então, vamos remover esse Mox.
+
+85
+00:08:43,760 --> 00:08:49,500
+ Como a gente viu nos slides, a gente tem que utilizar algumas diretivas junto do meu Unroll,
+
+86
+00:08:49,500 --> 00:08:52,400
+ para poder ter o comportamento que nós esperamos.
+
+87
+00:08:52,700 --> 00:08:55,080
+ A primeira delas, como mencionado, é o Reorder.
+
+88
+00:08:55,280 --> 00:09:01,200
+ Nós precisamos mover os canais para a parte mais interna do Loop, certo?
+
+89
+00:09:01,260 --> 00:09:06,180
+ A gente tem que garantir que eles estejam na parte mais interna do alinhamento de Loop.
+
+90
+00:09:06,180 --> 00:09:15,840
+ Seguinte a isso, utilizamos o Bound para estabelecer os limites da minha var, né, que é os canais.
+
+91
+00:09:16,440 --> 00:09:21,780
+ E aí eu tenho o mínimo, que é 0, e a extensão dessa minha dimensão, que vai ser o 3.
+
+92
+00:09:21,960 --> 00:09:25,040
+ Então, a gente vai de 0 até 2, né, 0, 1 e 2.
+
+93
+00:09:26,540 --> 00:09:29,880
+ E, seguinte a isso, nós executamos o Unroll.
+
+94
+00:09:29,880 --> 00:09:41,340
+ Eu posso remover isso aqui, para que a gente veja um efeito que pode ser observado quando vocês estiverem utilizando essas diretivas, certo?
+
+95
+00:09:42,420 --> 00:09:44,600
+ Então, ao rodar o caso 1,
+
+96
+00:09:51,680 --> 00:09:54,740
+ a gente tem ainda uma pipeline um pouco mais lenta, inclusive.
+
+97
+00:09:54,740 --> 00:10:01,860
+ E, ao verificar a atualização aqui do Statement File,
+
+98
+00:10:05,860 --> 00:10:07,260
+ vou aumentar um pouco.
+
+99
+00:10:12,380 --> 00:10:13,980
+ Nós temos o seguinte,
+
+100
+00:10:15,060 --> 00:10:17,420
+ são três versões aqui
+
+101
+00:10:17,420 --> 00:10:21,200
+ da minha execução, certo?
+
+102
+00:10:21,640 --> 00:10:23,460
+ Uma para cada um daqueles canais.
+
+103
+00:10:23,460 --> 00:10:31,820
+ Então, é como se o relógio estivesse considerando o C, o canal, como o loop mais externo.
+
+104
+00:10:49,640 --> 00:10:52,240
+ Estamos reexecutando agora com o Compute Root.
+
+105
+00:10:53,460 --> 00:10:56,320
+ Para ver, né, o que o Nilay está fazendo por padrão
+
+106
+00:10:56,320 --> 00:10:58,160
+ com essa nossa pipeline.
+
+107
+00:10:59,820 --> 00:11:02,640
+ Eu vou recarregar o meu Statement File.
+
+108
+00:11:07,240 --> 00:11:08,940
+ E, como esperado, o
+
+109
+00:11:08,940 --> 00:11:11,240
+ C, né, o canal, ele está
+
+110
+00:11:11,240 --> 00:11:13,580
+ aqui, no loop mais externo.
+
+111
+00:11:14,240 --> 00:11:15,660
+ Então, ao fazer o Unroll,
+
+112
+00:11:16,160 --> 00:11:17,520
+ a gente estabelece
+
+113
+00:11:17,520 --> 00:11:18,500
+ vai ter esse Extent aqui
+
+114
+00:11:18,500 --> 00:11:22,300
+ com o Bound, certo?
+
+115
+00:11:22,420 --> 00:11:24,640
+ E, ao fazer o Unroll sem o Reorder,
+
+116
+00:11:25,160 --> 00:11:25,760
+ ele vai
+
+117
+00:11:25,760 --> 00:11:29,760
+ desenrolar essa computação em três loops diferentes, certo?
+
+118
+00:11:29,840 --> 00:11:32,620
+ Então, três loops por toda a imagem diferente.
+
+119
+00:11:32,620 --> 00:11:39,100
+ Vamos, então, remover
+
+120
+00:11:39,100 --> 00:11:43,800
+ e passar a fazer o Reorder junto com
+
+121
+00:11:43,800 --> 00:11:45,760
+ as duas outras diretivas.
+
+122
+00:11:45,760 --> 00:12:02,560
+ A gente tem um pouco mais rápido do que, né, o nosso teste lá, inicial, com
+
+123
+00:12:02,560 --> 00:12:07,220
+ aqueles três loops, certo?
+
+124
+00:12:07,980 --> 00:12:10,460
+ Mas ainda não tão rápido quanto o Paralelo
+
+125
+00:12:10,460 --> 00:12:12,920
+ e também não tão rápido quanto o OpenCV.
+
+126
+00:12:13,660 --> 00:12:16,580
+ Vamos, então, prosseguir com o Scheduling
+
+127
+00:12:16,580 --> 00:12:17,760
+ dessa Pipeline.
+
+128
+00:12:18,200 --> 00:12:20,820
+ Mas, antes, passando para verificar
+
+129
+00:12:20,820 --> 00:12:25,700
+ a nova estrutura obtida no Scheduling File.
+
+130
+00:12:29,000 --> 00:12:30,700
+ Então, nós temos aqui
+
+131
+00:12:30,700 --> 00:12:33,100
+ que temos o loop mais externo,
+
+132
+00:12:33,180 --> 00:12:34,940
+ o Image Output pelo Y,
+
+133
+00:12:35,640 --> 00:12:36,620
+ depois pelo X,
+
+134
+00:12:37,180 --> 00:12:40,640
+ e os três canais sendo feito o Assign em sequência,
+
+135
+00:12:40,800 --> 00:12:41,680
+ um após o outro.
+
+136
+00:12:41,680 --> 00:12:51,400
+ Iremos, então, passar para o Caso 2,
+
+137
+00:12:51,700 --> 00:12:53,760
+ que é a aplicação do Paralelismo
+
+138
+00:12:53,760 --> 00:12:57,140
+ após esse Unroll, certo?
+
+139
+00:12:57,320 --> 00:13:00,340
+ Dessa forma, com o Reorder e o Bounding.
+
+140
+00:13:00,340 --> 00:13:12,800
+ Achamos, agora, um aumento na velocidade
+
+141
+00:13:12,800 --> 00:13:15,680
+ em comparação, inclusive, ao Scheduling Zero, aqui.
+
+142
+00:13:18,480 --> 00:13:22,220
+ Onde a gente chegou a 0.29 milissegundos.
+
+143
+00:13:22,740 --> 00:13:25,240
+ Com o OpenCV aqui, já, na média,
+
+144
+00:13:26,180 --> 00:13:28,980
+ já atingindo um valor menor, certo?
+
+145
+00:13:30,340 --> 00:13:33,120
+ Inclusive, o pior caso, também.
+
+146
+00:13:34,260 --> 00:13:35,760
+ Já tem uma boa diferença.
+
+147
+00:13:37,200 --> 00:13:38,900
+ Nós podemos prosseguir
+
+148
+00:13:38,900 --> 00:13:42,660
+ com o nosso Scheduling, né?
+
+149
+00:13:42,740 --> 00:13:45,500
+ Fazendo, testando um Splitting
+
+150
+00:13:45,500 --> 00:13:48,700
+ e executando o Paralelismo
+
+151
+00:13:48,700 --> 00:13:51,080
+ a partir desse Splitting do Y, certo?
+
+152
+00:13:51,160 --> 00:13:52,280
+ Então, ao invés de paralelizar
+
+153
+00:13:52,280 --> 00:13:54,320
+ a var Y pura,
+
+154
+00:13:54,380 --> 00:13:55,720
+ a gente vai fazer um Splitting nela
+
+155
+00:13:55,720 --> 00:13:57,560
+ antes de aplicar o Paralelismo.
+
+156
+00:13:58,180 --> 00:13:59,980
+ E, novamente, como antes,
+
+157
+00:13:59,980 --> 00:14:01,560
+ eu estou utilizando o VectorSize
+
+158
+00:14:01,560 --> 00:14:03,980
+ obtido com a função
+
+159
+00:14:03,980 --> 00:14:06,380
+ NaturalVectorSize do Relied
+
+160
+00:14:06,380 --> 00:14:08,640
+ como uma guia
+
+161
+00:14:08,640 --> 00:14:09,720
+ para a minha experimentação.
+
+162
+00:14:10,040 --> 00:14:11,000
+ Ele é só um valor
+
+163
+00:14:11,000 --> 00:14:12,760
+ que eu posso rapidamente experimentar
+
+164
+00:14:12,760 --> 00:14:14,780
+ vários fatores dele
+
+165
+00:14:14,780 --> 00:14:17,140
+ como uma guia, certo?
+
+166
+00:14:17,480 --> 00:14:19,180
+ No caso aqui, eu estou multiplicando ele por 8.
+
+167
+00:14:19,180 --> 00:14:25,160
+ Então, nós vamos executar aqui o Caso 3.
+
+168
+00:14:32,580 --> 00:14:33,920
+ Ele é um pouco mais lento
+
+169
+00:14:33,920 --> 00:14:35,640
+ que a versão anterior.
+
+170
+00:14:36,640 --> 00:14:38,500
+ A gente pode experimentar, também,
+
+171
+00:14:38,560 --> 00:14:39,100
+ modificar
+
+172
+00:14:39,100 --> 00:14:42,760
+ esse VectorSize
+
+173
+00:14:42,760 --> 00:14:46,500
+ e ver se a gente obtém
+
+174
+00:14:46,500 --> 00:14:49,020
+ um tempo um pouco melhor.
+
+175
+00:14:53,180 --> 00:14:54,520
+ Ele está um pouco mais rápido,
+
+176
+00:14:54,680 --> 00:14:55,320
+ mas, ainda assim,
+
+177
+00:14:55,380 --> 00:14:56,080
+ não superou
+
+178
+00:14:56,080 --> 00:14:57,600
+ o nosso Scheduling 2.
+
+179
+00:14:58,600 --> 00:14:59,480
+ Nós iremos, então,
+
+180
+00:14:59,540 --> 00:15:00,760
+ observar o Scheduling 4,
+
+181
+00:15:00,840 --> 00:15:01,980
+ onde a gente encadeia
+
+182
+00:15:01,980 --> 00:15:03,620
+ o Splitting com
+
+183
+00:15:03,620 --> 00:15:05,820
+ a Vectorização, certo?
+
+184
+00:15:05,860 --> 00:15:07,380
+ O Paralelismo com a Vectorização.
+
+185
+00:15:08,580 --> 00:15:09,600
+ Nós executamos
+
+186
+00:15:09,600 --> 00:15:10,720
+ o nosso OneRow.
+
+187
+00:15:13,240 --> 00:15:14,840
+ Fazemos o Splitting do Y
+
+188
+00:15:14,840 --> 00:15:17,300
+ e aplicamos o Paralelismo
+
+189
+00:15:17,300 --> 00:15:19,520
+ na variável mais externa
+
+190
+00:15:19,520 --> 00:15:22,740
+ e fazemos o Splitting do X
+
+191
+00:15:22,740 --> 00:15:24,920
+ e aplicamos a Vectorização
+
+192
+00:15:24,920 --> 00:15:27,180
+ na variável mais interna, certo?
+
+193
+00:15:28,760 --> 00:15:30,460
+ Normalmente, a gente pode experimentar
+
+194
+00:15:30,460 --> 00:15:31,640
+ com diversos fatores
+
+195
+00:15:31,640 --> 00:15:32,560
+ desse número
+
+196
+00:15:32,560 --> 00:15:33,180
+ ou simplesmente
+
+197
+00:15:33,180 --> 00:15:34,439
+ ir variando
+
+198
+00:15:34,439 --> 00:15:36,319
+ manualmente
+
+199
+00:15:36,319 --> 00:15:37,100
+ os números, certo?
+
+200
+00:15:47,620 --> 00:15:48,420
+ Com isso,
+
+201
+00:15:48,520 --> 00:15:49,199
+ nós obtemos
+
+202
+00:15:49,199 --> 00:15:51,020
+ 0,1 milissegundos.
+
+203
+00:15:52,380 --> 00:15:53,180
+ Nós podemos, então,
+
+204
+00:15:53,240 --> 00:15:54,120
+ rodar novamente
+
+205
+00:15:54,120 --> 00:15:56,220
+ o Protosspint
+
+206
+00:15:56,220 --> 00:15:56,960
+ C++
+
+207
+00:15:56,960 --> 00:15:58,680
+ como vou perceber.
+
+208
+00:16:01,640 --> 00:16:14,380
+ E, em comparação,
+
+209
+00:16:14,580 --> 00:16:15,380
+ nós temos aí
+
+210
+00:16:15,380 --> 00:16:16,939
+ metade do tempo
+
+211
+00:16:16,939 --> 00:16:18,120
+ na média
+
+212
+00:16:18,120 --> 00:16:18,980
+ com o Raylight.
+
+213
+00:16:18,980 --> 00:16:29,720
+ E aí, para observar
+
+214
+00:16:29,720 --> 00:16:30,440
+ o que acontece
+
+215
+00:16:30,440 --> 00:16:31,760
+ se você tenta executar
+
+216
+00:16:31,760 --> 00:16:33,400
+ essa mesma operação
+
+217
+00:16:33,400 --> 00:16:38,500
+ sem o OneRow, certo?
+
+218
+00:16:38,560 --> 00:16:39,860
+ Eu tenho o caso 5 aqui.
+
+219
+00:16:39,860 --> 00:16:51,800
+ Então, sem o OneRow,
+
+220
+00:16:51,880 --> 00:16:53,500
+ a gente consegue chegar
+
+221
+00:16:53,500 --> 00:16:59,300
+ abaixo do OpenCV na média, certo?
+
+222
+00:16:59,940 --> 00:17:02,000
+ Mas, não tão rápido
+
+223
+00:17:02,000 --> 00:17:03,620
+ quanto fazendo o OneRow.
+
+224
+00:17:03,620 --> 00:17:04,359
+ Inclusive,
+
+225
+00:17:05,020 --> 00:17:05,780
+ é também ali
+
+226
+00:17:05,780 --> 00:17:06,319
+ no range
+
+227
+00:17:06,319 --> 00:17:08,240
+ de metade do tempo
+
+228
+00:17:08,240 --> 00:17:08,660
+ em relação
+
+229
+00:17:08,660 --> 00:17:09,160
+ a esse
+
+230
+00:17:09,160 --> 00:17:10,380
+ Schedule 100
+
+231
+00:17:10,380 --> 00:17:10,839
+ em OneRow.
+
+232
+00:17:14,640 --> 00:17:16,220
+ A gente pode testar também
+
+233
+00:17:16,220 --> 00:17:17,420
+ a reordenação.
+
+234
+00:17:19,040 --> 00:17:19,920
+ Nesse caso, sim.
+
+235
+00:17:19,920 --> 00:17:32,280
+ E aí, também é um pouco
+
+236
+00:17:32,280 --> 00:17:32,900
+ mais rápida,
+
+237
+00:17:33,040 --> 00:17:35,440
+ mas o melhor tempo
+
+238
+00:17:35,440 --> 00:17:36,900
+ está na mesma ordem
+
+239
+00:17:36,900 --> 00:17:37,200
+ ali
+
+240
+00:17:37,200 --> 00:17:39,780
+ do nosso Schedule 4.
+
+241
+00:17:41,980 --> 00:17:42,860
+ Aqui na média,
+
+242
+00:17:42,940 --> 00:17:43,320
+ no caso.
+
+243
+00:17:43,320 --> 00:17:51,540
+ Então, nós aplicamos
+
+244
+00:17:51,540 --> 00:17:52,240
+ o OneRow
+
+245
+00:17:52,240 --> 00:17:53,320
+ para tanto
+
+246
+00:17:53,320 --> 00:17:54,780
+ possibilitar
+
+247
+00:17:54,780 --> 00:17:55,899
+ algumas otimizações
+
+248
+00:17:55,899 --> 00:17:56,980
+ do nosso código
+
+249
+00:17:56,980 --> 00:17:58,600
+ como também
+
+250
+00:17:58,600 --> 00:18:01,139
+ eliminar
+
+251
+00:18:01,139 --> 00:18:02,020
+ o Mux
+
+252
+00:18:02,020 --> 00:18:03,439
+ dentro do loop
+
+253
+00:18:03,439 --> 00:18:04,200
+ mais interno
+
+254
+00:18:04,200 --> 00:18:04,960
+ para o nosso pipeline.
+
+255
+00:18:08,020 --> 00:18:09,580
+ Como leitura recomendada,
+
+256
+00:18:09,760 --> 00:18:10,780
+ eu deixo para vocês
+
+257
+00:18:10,780 --> 00:18:11,600
+ tanto a lição
+
+258
+00:18:11,600 --> 00:18:12,540
+ de Scheduleing
+
+259
+00:18:12,540 --> 00:18:13,100
+ do Raylight
+
+260
+00:18:13,100 --> 00:18:14,440
+ como também
+
+261
+00:18:14,440 --> 00:18:15,640
+ novamente o ponto
+
+262
+00:18:15,640 --> 00:18:16,440
+ em que o Raylight
+
+263
+00:18:16,440 --> 00:18:18,240
+ define ali
+
+264
+00:18:18,240 --> 00:18:19,720
+ definições relacionadas
+
+265
+00:18:19,720 --> 00:18:20,780
+ às funks, certo?
+
+266
+00:18:21,140 --> 00:18:21,800
+ Que vai conter
+
+267
+00:18:21,800 --> 00:18:22,740
+ as definições
+
+268
+00:18:22,740 --> 00:18:23,320
+ do Raylight,
+
+269
+00:18:23,360 --> 00:18:24,100
+ as duas definições
+
+270
+00:18:24,100 --> 00:18:24,580
+ do Raylight
+
+271
+00:18:24,580 --> 00:18:26,600
+ para o OneRow.
+
+272
+00:18:30,200 --> 00:18:31,040
+ Muito obrigado
+
+273
+00:18:31,040 --> 00:18:31,960
+ pela atenção de vocês
+
+274
+00:18:31,960 --> 00:18:32,900
+ e até a próxima.
+
+275
+00:18:32,900 --> 00:18:33,470
+ do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight do Raylight
+
