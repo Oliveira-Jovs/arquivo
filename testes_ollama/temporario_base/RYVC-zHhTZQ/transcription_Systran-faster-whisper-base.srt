@@ -1,0 +1,108 @@
+1
+00:00:00,000 --> 00:00:10,440
+ As pessoas que trabalham em um equipe de desenvolvimento de software, com frequência tem que integrar,
+
+2
+00:00:10,440 --> 00:00:15,520
+ juntar as contribuições, que elas individualmente em fazem para a construção do sistema.
+
+3
+00:00:15,520 --> 00:00:21,080
+ Eles normalmente fazem isso através de comuns como Geek and Magic, Geek and basic, Geek and
+
+4
+00:00:21,080 --> 00:00:25,080
+ Showerpick, que sinalizam conflitos quando as pessoas tentam mudar a mesma parte do código
+
+5
+00:00:25,080 --> 00:00:26,080
+ de sistema.
+
+6
+00:00:26,080 --> 00:00:31,000
+ Um, por exemplo, com duas pessoas tentam alterar links consecutivas de um mesmo programa,
+
+7
+00:00:31,000 --> 00:00:36,480
+ de um mesmo método, de uma mesma classe, mas muitas vezes essas mudanças feitas individualmente
+
+8
+00:00:36,480 --> 00:00:42,280
+ por essas pessoas, apesar de serem conflitantes, não são detectadas por essas ferramentas,
+
+9
+00:00:42,280 --> 00:00:49,640
+ que infelizmente são limitadas e passam batidas e integram as contribuições de forma equivocada,
+
+10
+00:00:49,640 --> 00:00:54,440
+ o que eventualmente leva uma fala do sistema quando eles tivessem induzado por seu lino
+
+11
+00:00:54,440 --> 00:00:59,599
+ com aros, trazendo consequências negativas para muita gente, muitas vezes consequências
+
+12
+00:00:59,599 --> 00:01:00,599
+ sérias.
+
+13
+00:01:00,599 --> 00:01:05,360
+ Para evitar essas limitações dessas ferramentas atuais de integração do código, nós
+
+14
+00:01:05,360 --> 00:01:11,680
+ no sigo, SPG, em colaboração com pesquisadores aqui de 100 milhões de Estados Unidos, pesquisamos
+
+15
+00:01:11,680 --> 00:01:17,360
+ e desenvolvemos ferramentas complementares que podem ser acopladas ao Geek para detectar
+
+16
+00:01:17,360 --> 00:01:22,880
+ esses problemas, esses conflitos e assim evitar que eles chegem aos usuários finais.
+
+17
+00:01:22,880 --> 00:01:27,199
+ A gente faz isso usando uma combinação de técnicas de análise estática e dinâmica
+
+18
+00:01:27,199 --> 00:01:32,000
+ de código, que assim conseguem detectar os chamados conflitos semânticos, que são
+
+19
+00:01:32,000 --> 00:01:37,119
+ lustamente causados com pessoas diferentes de uma mesma equipe, alteram parte diferente
+
+20
+00:01:37,119 --> 00:01:42,679
+ do código, mas essas partes são da pimenta e precisam ser ajustadas antes de serem
+
+21
+00:01:42,679 --> 00:01:47,320
+ integradas, só que as pessoas individualmente não têm conhecimento disso.
+
+22
+00:01:47,320 --> 00:01:53,160
+ As nossas ferramentas vão justamente nessa direção de sinalizar a incessidade desses
+
+23
+00:01:53,160 --> 00:02:00,120
+ ajustes adicionais, para que o defeito possa ser antecipado e a fânia do sistema evitada.
+
+24
+00:02:00,120 --> 00:02:05,280
+ Isso é especialmente importante, porque esse tipo de defeito causado pela interferência
+
+25
+00:02:05,280 --> 00:02:11,240
+ entre mudanças feitas por duas pessoas é muito mais difícil de ser detectado e porrigido
+
+26
+00:02:11,240 --> 00:02:15,160
+ do que os defeitos que são individualmente causados por apenas uma pessoa.
+
+27
+00:02:17,320 --> 00:02:24,530
+ E aí, o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que
+

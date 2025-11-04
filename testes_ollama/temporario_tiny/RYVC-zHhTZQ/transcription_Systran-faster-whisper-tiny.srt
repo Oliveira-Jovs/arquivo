@@ -1,0 +1,112 @@
+1
+00:00:00,000 --> 00:00:09,480
+ As pessoas que trabalham em um equipe de desenvolvimento de sofre, a conferência tem que
+
+2
+00:00:09,480 --> 00:00:14,560
+ integrar, juntar as contribuições, que elas individualmente em fase em para a construção
+
+3
+00:00:14,560 --> 00:00:15,560
+ do sistema.
+
+4
+00:00:15,560 --> 00:00:20,880
+ Os no momento fazem isso através de comuns com o Mugit Imagine, Githy Rebes e Githy
+
+5
+00:00:20,880 --> 00:00:25,240
+ RPG, que se analisa um conflito quando as pessoas tentam mudar a mesma parte do código de
+
+6
+00:00:25,240 --> 00:00:26,240
+ sistema.
+
+7
+00:00:26,240 --> 00:00:30,080
+ Por exemplo, quando duas pessoas tentam alterar a linhas consecutivas de um mesmo
+
+8
+00:00:30,080 --> 00:00:33,080
+ programa, de um mesmo método, de um mesmo a classe.
+
+9
+00:00:33,080 --> 00:00:38,360
+ Mas muitas vezes, essas mudanças feitas individualmente, por essas pessoas, apesar
+
+10
+00:00:38,360 --> 00:00:44,680
+ de serem conflitantes, não são detectadas por essas ferramentas, que infelizmente são limitadas
+
+11
+00:00:44,680 --> 00:00:50,960
+ e passam batidas, e integram as contribuições de forma equivocada, o que eventualmente
+
+12
+00:00:50,960 --> 00:00:55,320
+ leva uma falha do sistema quando eles tivessem do lado por seus usuários, trazer com
+
+13
+00:00:55,320 --> 00:01:01,120
+ os recursos negativos para muita gente, muitas vezes possa conhecer sérios, para evitar
+
+14
+00:01:01,120 --> 00:01:06,000
+ essas limitações dessas ferramentas atuais de integração de código, nós no sinho
+
+15
+00:01:06,000 --> 00:01:12,440
+ a RPG em colaboração, com pesquisadores aqui de 1.1 Estados Unidos, pesquisamos e desenvolver
+
+16
+00:01:12,440 --> 00:01:18,160
+ nos ferramentas complementares que podem ser acopladas ao Githy para detectar esses problemas
+
+17
+00:01:18,160 --> 00:01:22,800
+ esses conflitos e assim evitar que eles cheguem os usuários finais.
+
+18
+00:01:22,800 --> 00:01:28,160
+ A gente faz isso usando a combinação de técnicas de análise estática e dinâmica de código,
+
+19
+00:01:28,160 --> 00:01:33,280
+ que assim consegue detectar os chamados conflitos sem úticos, que são justamente causados
+
+20
+00:01:33,280 --> 00:01:38,039
+ com pessoas diferentes de uma mesma equipe, ao ter um parte diferente do código,
+
+21
+00:01:38,039 --> 00:01:43,640
+ mas essas partes são dependentes e precisam ser ajustadas antes de ser integradas,
+
+22
+00:01:43,640 --> 00:01:48,800
+ só que as pessoas indibidomente não têm conhecimento desse, as nossas ferramentas
+
+23
+00:01:48,800 --> 00:01:54,759
+ vão justamente nessa direção de sinalizar esse cidade desses ajustes alicionais,
+
+24
+00:01:54,759 --> 00:02:00,080
+ para que o defeito possa ser antecipado e a falha do sistema evitada.
+
+25
+00:02:00,080 --> 00:02:05,280
+ Isso é especialmente importante porque esse tipo de defeito, causado pela interferência
+
+26
+00:02:05,280 --> 00:02:11,200
+ entre mudanças feitas por duas pessoas, é muito mais difícil de ser detectado e corrigido
+
+27
+00:02:11,200 --> 00:02:15,240
+ do que os defeitos que são individomente causados por apenas um e pessoa.
+
+28
+00:02:18,800 --> 00:02:24,530
+ O que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que
+

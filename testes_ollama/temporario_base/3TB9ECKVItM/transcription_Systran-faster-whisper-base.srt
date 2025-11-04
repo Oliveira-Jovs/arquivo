@@ -1,0 +1,876 @@
+1
+00:00:00,000 --> 00:00:07,000
+ Olá, seja muito bem-vindos a mais uma aula do curso de linguagem de programação específica para iar.
+
+2
+00:00:07,000 --> 00:00:12,000
+ Hoje, podemos esforar mais alguns conceitos de scheduling.
+
+3
+00:00:12,000 --> 00:00:15,000
+ Caso o conceito de hoje será o un roll.
+
+4
+00:00:15,000 --> 00:00:22,000
+ Como a gente viu naquele exemplo idáctico com a geração de linguagem tribunante,
+
+5
+00:00:22,000 --> 00:00:29,000
+ pode ser utilizado para diminuir o número de terações a custa do tamanho do corpo do loop.
+
+6
+00:00:29,000 --> 00:00:32,000
+ Então, vamos aumentar o corpo do loop.
+
+7
+00:00:32,000 --> 00:00:35,000
+ Afinhe diminuir o número de terações.
+
+8
+00:00:35,000 --> 00:00:49,000
+ A gente pode, a gente viu que ele tem um efeito de como se executasse multiple terações em o que seria uma só no loop transformado.
+
+9
+00:00:49,000 --> 00:00:54,000
+ Ele pode ser útil para quando a gente tem pixels que manipulam dados em comuns
+
+10
+00:00:54,000 --> 00:01:02,000
+ e um padrão específico que a gente vai ver frequentemente que, as vezes, é útil utilizar o um roll.
+
+11
+00:01:02,000 --> 00:01:09,000
+ É quando a gente tem mais de um canal e quer se proteger por estar o assign desses canais, certo?
+
+12
+00:01:09,000 --> 00:01:14,000
+ Em sequência, então, um atragem o outro sem uma criação de um novo loop.
+
+13
+00:01:14,000 --> 00:01:21,000
+ Ele tem duas sintaxis, a primeira delas é só passando um avar para dentro desse um roll
+
+14
+00:01:21,000 --> 00:01:24,000
+ e a outra avar é um fator.
+
+15
+00:01:24,000 --> 00:01:27,000
+ Ele vai ser utilizado com um bound ou com split.
+
+16
+00:01:27,000 --> 00:01:35,000
+ No caso aqui, quando a gente quer fazer um roll, por exemplo, de um avar que não seja os canais,
+
+17
+00:01:35,000 --> 00:01:40,000
+ a gente normalmente precisa fazer um split dessa avar, certo?
+
+18
+00:01:40,000 --> 00:01:44,000
+ E a gente faz um split com um fator e depois aplica um roll nessa avar,
+
+19
+00:01:44,000 --> 00:01:50,000
+ que vai estar ali bem interna no alinhamento do loop, certo?
+
+20
+00:01:51,000 --> 00:01:58,000
+ Uma outra opção é você se prende fazer essa sintaxis aqui em roll passando o avar e depois o fator.
+
+21
+00:01:58,000 --> 00:02:08,000
+ A diferença que você vai ficar escondido o split, certo? Ele vai esconder esse split.
+
+22
+00:02:10,000 --> 00:02:14,000
+ Para o exemplo dos canais, a gente vai estar utilizando esse bound aqui.
+
+23
+00:02:15,000 --> 00:02:21,000
+ Então, nós vamos, na verdade, utilizar tanto o rewarder como o bound para mover os canais,
+
+24
+00:02:21,000 --> 00:02:25,000
+ para a parte mais interna do loop, certo?
+
+25
+00:02:25,000 --> 00:02:33,000
+ O bound, ele vai dizer por relied que a minha variável do canal é limitada entre 0 a 3, certo?
+
+26
+00:02:33,000 --> 00:02:38,000
+ Então, ele é RGB, a gente sempre vai trabalhar em relied com o mínimo e o extente.
+
+27
+00:02:39,000 --> 00:02:42,000
+ Aqui é o... a extensão daquela dimensão.
+
+28
+00:02:42,000 --> 00:02:49,000
+ Então, a gente vai passar para o bound a variável, o mínimo que vai ser 0 e o extente que vai ser 3, que são 3 canais.
+
+29
+00:02:51,000 --> 00:03:00,000
+ E a partir disso, diferentemente das tráxias aqui com o split, a gente sabe os limites que esse loop vai percorrer,
+
+30
+00:03:00,000 --> 00:03:02,000
+ a gente sabe qual é os limites da minha variável.
+
+31
+00:03:02,000 --> 00:03:07,000
+ Então, a gente tem o utilizo o bound para passar essa informação para um roll depois.
+
+32
+00:03:08,000 --> 00:03:14,000
+ No caso, onde a gente não sabe a dimensão do loop, que vai ser, nos casos, a gente tem uma variável,
+
+33
+00:03:14,000 --> 00:03:20,000
+ que não seja aquela dos canais, por exemplo, a gente vai estar utilizando essa syntax com o split.
+
+34
+00:03:22,000 --> 00:03:26,000
+ Eremos agora verificar na prática a utilização do roll.
+
+35
+00:03:26,000 --> 00:03:36,000
+ Eu tenho aqui um exemplo, onde eu estou aplicando um efeito sep em uma imagem, certo? Então, nós temos um efeito de falta antiga sendo aplicado.
+
+36
+00:03:38,000 --> 00:03:44,000
+ Primeiramente, mostrando o protótipo de Python para a gente ter um dia da temporização, certo?
+
+37
+00:03:44,000 --> 00:03:50,000
+ do runtime dessa pipeline, eu vou rodar o protótipo aqui.
+
+38
+00:03:58,000 --> 00:04:01,000
+ E nós temos em Python.
+
+39
+00:04:02,000 --> 00:04:11,000
+ A velocidade dele de 20, em casa ele está demorando 23 mil segundos, no caso 24 mil segundos,
+
+40
+00:04:11,000 --> 00:04:20,000
+ para completar a execução da pipeline na média, no pior caso, está em 46 mil segundos e no melhor caso 20 mil segundos.
+
+41
+00:04:20,000 --> 00:04:23,000
+ A pipeline ela é simples, ela só envolve.
+
+42
+00:04:24,000 --> 00:04:29,000
+ Multiplicar os canais da imagem por diversos fatores, certo?
+
+43
+00:04:29,000 --> 00:04:35,000
+ Cada canal novo, ele vai ter um conjunto de três fatores associado a ele, certo?
+
+44
+00:04:35,000 --> 00:04:42,000
+ Então, cada novo canal da minha imagem, cada novo RJB, é uma ponderação dos RJB anteriores, né?
+
+45
+00:04:43,000 --> 00:04:54,000
+ Após isso eu faço mergem desses canais, converto para e o intuito, a versão clipada dele, ou seja, mantida entre 0 e 35.
+
+46
+00:04:57,000 --> 00:05:01,000
+ Eu tenho aqui também um protótipo, instrumentado em ser mais mais com OpenCV,
+
+47
+00:05:04,000 --> 00:05:08,000
+ então, é a nossa segunda referência de tempo,
+
+48
+00:05:09,000 --> 00:05:17,000
+ e nós esperamos um tempo um pouco menor de execução em relação ao Python.
+
+49
+00:05:18,000 --> 00:05:40,000
+ De algo que temos aqui, o resultado do OpenCV está igualzinho ao do Python,
+
+50
+00:05:40,000 --> 00:05:48,000
+ e no caso a gente tem aqui 0,3 mil segundos na média, certo?
+
+51
+00:05:48,000 --> 00:05:54,000
+ Em comparação ao Python, com seus 23 mil segundos,
+
+52
+00:05:54,000 --> 00:06:01,000
+ no maior caso a gente tem 0,19 mil segundos e no pior caso, 4 mil segundos, certo?
+
+53
+00:06:01,000 --> 00:06:04,000
+ Então, é bem mais rápido que o Python.
+
+54
+00:06:04,000 --> 00:06:08,000
+ Vamos então ver se a gente consegue chegar mais rápido com o reliable.
+
+55
+00:06:11,000 --> 00:06:17,000
+ Então, eu tenho aqui para ir implementada no RayLide, com um generator,
+
+56
+00:06:17,000 --> 00:06:22,000
+ e com um parâmetro aqui para selecionar o Skydoll somizado, certo?
+
+57
+00:06:25,000 --> 00:06:30,000
+ E aí, o que a gente tem aqui é esse Mox,
+
+58
+00:06:31,000 --> 00:06:38,000
+ e aí, no caso, a gente vai poder observar um das maiores utilidades do Unroll,
+
+59
+00:06:39,000 --> 00:06:44,000
+ que é a eliminação do Select para fazer esse a-sign dos canais, certo?
+
+60
+00:06:44,000 --> 00:06:48,000
+ Então, a gente tem um Mox aqui, a gente consegue converter,
+
+61
+00:06:48,000 --> 00:06:54,000
+ a gente tem essa multiplicação, a gente vai converter isso daqui,
+
+62
+00:06:54,000 --> 00:06:57,000
+ para executar o a-sign, um deporte do outro ali,
+
+63
+00:06:57,000 --> 00:07:01,000
+ dentro do loop mais interno da minha pipeline.
+
+64
+00:07:02,000 --> 00:07:07,000
+ Então, eu tenho aqui primeiro a utilização,
+
+65
+00:07:07,000 --> 00:07:13,000
+ com o paralelismo apenas sendo aplicado no e-sign,
+
+66
+00:07:13,000 --> 00:07:17,000
+ então, nós vamos verificar ainda sem o Unroll, certo?
+
+67
+00:07:17,000 --> 00:07:21,000
+ Uma aplicação mais simples de Skydoll.
+
+68
+00:07:32,000 --> 00:07:35,000
+ Ao executar isso aqui, a gente obtém um código,
+
+69
+00:07:35,000 --> 00:07:37,000
+ também bem mais rápido que o Python,
+
+70
+00:07:37,000 --> 00:07:41,000
+ mais lento que o OPCV,
+
+71
+00:07:41,000 --> 00:07:46,000
+ inclusive, o melhor tempo dessa execução em RayLide
+
+72
+00:07:46,000 --> 00:07:54,000
+ é estar assim na da média em relação ao OPCV, certo?
+
+73
+00:08:01,000 --> 00:08:05,000
+ Nós podemos, então, agora verificar o seito em file,
+
+74
+00:08:05,000 --> 00:08:07,000
+ que eu tenho já canegado aqui,
+
+75
+00:08:07,000 --> 00:08:09,000
+ só preciso carregar essa página,
+
+76
+00:08:09,000 --> 00:08:13,000
+ vamos fechar o assembly,
+
+77
+00:08:13,000 --> 00:08:17,000
+ e verificar aqui, na que a gente tem esse Mox aqui dentro,
+
+78
+00:08:17,000 --> 00:08:21,000
+ internamente no...
+
+79
+00:08:21,000 --> 00:08:25,000
+ a gente tem que o e-sign se não sendo executado em paralelo,
+
+80
+00:08:25,000 --> 00:08:29,000
+ e dentro do X, na parte mais interna a gente tem
+
+81
+00:08:29,000 --> 00:08:33,000
+ esse Mox aqui, certo?
+
+82
+00:08:40,000 --> 00:08:44,000
+ Então, vamos remover esse Mox.
+
+83
+00:08:44,000 --> 00:08:46,000
+ Como a gente viu, meus idade, a gente tem que utilizar
+
+84
+00:08:46,000 --> 00:08:50,000
+ algumas diretivas junto do meu Unroll
+
+85
+00:08:50,000 --> 00:08:53,000
+ para poder ter o comportamento que nós esperamos.
+
+86
+00:08:53,000 --> 00:08:55,000
+ A primeira delas, como mencionada,
+
+87
+00:08:55,000 --> 00:08:58,000
+ nós precisamos mover os canais
+
+88
+00:08:58,000 --> 00:09:01,000
+ para a parte mais interna do loop,
+
+89
+00:09:01,000 --> 00:09:03,000
+ certo? A gente tem que garantir que eles tejam
+
+90
+00:09:03,000 --> 00:09:07,000
+ na parte mais interna do aninhamento do loop.
+
+91
+00:09:07,000 --> 00:09:10,000
+ Seguinte é isso, utilizamos um bound
+
+92
+00:09:10,000 --> 00:09:14,000
+ para estabelecer os vimites do da minha var,
+
+93
+00:09:14,000 --> 00:09:16,000
+ que é os canais.
+
+94
+00:09:16,000 --> 00:09:18,000
+ E aí, eu tenho o mínimo que é zero
+
+95
+00:09:18,000 --> 00:09:21,000
+ e a extensão dessa minha dimensão,
+
+96
+00:09:21,000 --> 00:09:24,000
+ que vai ser o 3, então, isso vai de zero até 2,
+
+97
+00:09:24,000 --> 00:09:26,000
+ zero, 1 e 2.
+
+98
+00:09:26,000 --> 00:09:30,000
+ E seguinte é isso, nós executamos o Unroll.
+
+99
+00:09:30,000 --> 00:09:34,000
+ Eu posso remover isso aqui para que a gente veja
+
+100
+00:09:34,000 --> 00:09:37,000
+ um efeito que pode ser observado
+
+101
+00:09:37,000 --> 00:09:39,000
+ quando vocês tiverem utilizando
+
+102
+00:09:39,000 --> 00:09:42,000
+ essas diretivas, certo?
+
+103
+00:09:42,000 --> 00:09:45,000
+ Então, ao rodar o caso um,
+
+104
+00:09:46,000 --> 00:09:56,000
+ a gente tem ainda um papá, um pouco mais rante, inclusive,
+
+105
+00:09:56,000 --> 00:10:05,000
+ e ao verificar a atualização aqui do Statement File,
+
+106
+00:10:05,000 --> 00:10:09,000
+ vou aumentar um pouco,
+
+107
+00:10:10,000 --> 00:10:14,000
+ nós temos o seguinte,
+
+108
+00:10:14,000 --> 00:10:18,000
+ três versões aqui,
+
+109
+00:10:18,000 --> 00:10:21,000
+ da minha execução, certo?
+
+110
+00:10:21,000 --> 00:10:24,000
+ Um para cada um daqueles canais.
+
+111
+00:10:24,000 --> 00:10:27,000
+ Então, é como se o realite vai se considerando
+
+112
+00:10:27,000 --> 00:10:32,000
+ o C, o canal como o loop mais externo.
+
+113
+00:10:39,000 --> 00:10:44,000
+ Então, me executando agora com o Computer Roots,
+
+114
+00:10:44,000 --> 00:10:48,000
+ para ver o que o lilaio está fazendo com o padrão
+
+115
+00:10:48,000 --> 00:10:51,000
+ com essa nosso pipeline.
+
+116
+00:10:51,000 --> 00:10:54,000
+ Eu vou recarregar o meu Statement File,
+
+117
+00:10:54,000 --> 00:10:56,000
+ e como esperado o que o lilaio está fazendo
+
+118
+00:10:56,000 --> 00:10:59,000
+ com o padrão com essa nosso pipeline.
+
+119
+00:10:59,000 --> 00:11:03,000
+ Eu vou recarregar o meu Statement File,
+
+120
+00:11:03,000 --> 00:11:07,000
+ e como esperado o que o lilaio está fazendo com o padrão,
+
+121
+00:11:07,000 --> 00:11:11,000
+ e como esperado o C, o canal,
+
+122
+00:11:11,000 --> 00:11:14,000
+ ele está aqui no loop mais externo.
+
+123
+00:11:14,000 --> 00:11:16,000
+ Então, ao fazer um roll,
+
+124
+00:11:16,000 --> 00:11:19,000
+ a gente estabelece esse extente aqui,
+
+125
+00:11:19,000 --> 00:11:22,000
+ com o Bound, certo?
+
+126
+00:11:22,000 --> 00:11:25,000
+ E ao fazer um roll, sem o Reorder,
+
+127
+00:11:25,000 --> 00:11:28,000
+ ele vai desenrolar essa computação
+
+128
+00:11:28,000 --> 00:11:30,000
+ em três grupos diferentes, certo?
+
+129
+00:11:30,000 --> 00:11:33,000
+ Então, três grupos por todo a imagem diferente.
+
+130
+00:11:38,000 --> 00:11:41,000
+ Vamos, então, remover,
+
+131
+00:11:41,000 --> 00:11:46,000
+ e passar a fazer o Reorder junto com as duas outras objetivas.
+
+132
+00:11:57,000 --> 00:12:01,000
+ A gente tem um pouco mais rápido que o nosso teste
+
+133
+00:12:01,000 --> 00:12:03,000
+ lá inicial,
+
+134
+00:12:04,000 --> 00:12:07,000
+ aqueles três loops, certo?
+
+135
+00:12:07,000 --> 00:12:10,000
+ Mas ainda não tão rápido contra o paralelo,
+
+136
+00:12:10,000 --> 00:12:13,000
+ e também não tão rápido contra o OpenCV.
+
+137
+00:12:13,000 --> 00:12:16,000
+ Vamos, então, procedir com o scheduling
+
+138
+00:12:16,000 --> 00:12:18,000
+ dessa pipeline,
+
+139
+00:12:18,000 --> 00:12:21,000
+ mais antes, passando para verificar
+
+140
+00:12:21,000 --> 00:12:26,000
+ a nova estrutura obtida no Statement File.
+
+141
+00:12:29,000 --> 00:12:31,000
+ Então, nós temos aqui
+
+142
+00:12:31,000 --> 00:12:34,000
+ que temos o loop mais externo em medio de Output
+
+143
+00:12:34,000 --> 00:12:35,000
+ pelo X,
+
+144
+00:12:35,000 --> 00:12:37,000
+ depois pelo X,
+
+145
+00:12:37,000 --> 00:12:41,000
+ e os três canais sendo feito o assign em sequência,
+
+146
+00:12:41,000 --> 00:12:43,000
+ uma prois do outro.
+
+147
+00:12:49,000 --> 00:12:52,000
+ Eremos, então, passar para o caso dois,
+
+148
+00:12:52,000 --> 00:12:56,000
+ que é a aplicação do paralelismo após esse roll,
+
+149
+00:12:56,000 --> 00:13:00,000
+ certo? Dessa forma, com o Reorder e o Bound.
+
+150
+00:13:02,000 --> 00:13:06,000
+ Nós temos agora um momento na velocidade em comparação,
+
+151
+00:13:06,000 --> 00:13:09,000
+ inclusive, acho que é do 0 aqui.
+
+152
+00:13:10,000 --> 00:13:14,000
+ Um dia de chegou a 0.29 milicigunos,
+
+153
+00:13:14,000 --> 00:13:18,000
+ com o OpenCV aqui já na média,
+
+154
+00:13:18,000 --> 00:13:21,000
+ já atingindo valor menor, certo?
+
+155
+00:13:31,000 --> 00:13:34,000
+ Inclusive, o pior caso também,
+
+156
+00:13:34,000 --> 00:13:37,000
+ tem uma boa diferença.
+
+157
+00:13:37,000 --> 00:13:43,000
+ Nós podemos prosseguir com o nosso schedule,
+
+158
+00:13:43,000 --> 00:13:47,000
+ fazendo a questão de um splitting
+
+159
+00:13:47,000 --> 00:13:49,000
+ e executando o paralelismo
+
+160
+00:13:49,000 --> 00:13:51,000
+ a partir desse splitting do Ibsoul, certo?
+
+161
+00:13:51,000 --> 00:13:54,000
+ Então, ao invés de paralelizar a var Ibsoul pura,
+
+162
+00:13:54,000 --> 00:13:58,000
+ a gente vai fazer um splitting nela antes de aplicar o paralelismo.
+
+163
+00:13:58,000 --> 00:14:02,000
+ E, novamente, como antes, eu estou utilizando o VectorSize,
+
+164
+00:14:02,000 --> 00:14:07,000
+ obtido com a função NaturalVectorSize do Relage,
+
+165
+00:14:07,000 --> 00:14:10,000
+ como a dia para a minha experimentação.
+
+166
+00:14:10,000 --> 00:14:13,000
+ Ele falou um valor que eu posso rapidamente experimentar
+
+167
+00:14:13,000 --> 00:14:17,000
+ vários fatores dele, como uma guia, certo?
+
+168
+00:14:17,000 --> 00:14:20,000
+ O caso aqui estou explicando ele por 8.
+
+169
+00:14:22,000 --> 00:14:26,000
+ Então, nós vamos executar aqui o caso 3.
+
+170
+00:14:28,000 --> 00:14:36,000
+ É um pouco mais lento que a Aversão do Relage.
+
+171
+00:14:36,000 --> 00:14:40,000
+ Pode experimentar, então, em modificar
+
+172
+00:14:40,000 --> 00:14:44,000
+ esse VectorSize.
+
+173
+00:14:44,000 --> 00:14:50,000
+ O VectorSize obtém um tempo um pouco melhor.
+
+174
+00:14:50,000 --> 00:14:54,000
+ Então, um pouco mais rápido,
+
+175
+00:14:54,000 --> 00:14:58,000
+ mais ainda assim, não superou o nosso Skyroll 2.
+
+176
+00:14:58,000 --> 00:15:02,000
+ Então, observar o Skyroll 4, onde a gente encadeia
+
+177
+00:15:02,000 --> 00:15:06,000
+ o splitting com a virtualização, certo?
+
+178
+00:15:06,000 --> 00:15:08,000
+ O paralelismo com a virtualização.
+
+179
+00:15:08,000 --> 00:15:12,000
+ Nós executamos o nosso roll,
+
+180
+00:15:12,000 --> 00:15:15,000
+ fazemos o splitting do Ibsoul
+
+181
+00:15:15,000 --> 00:15:20,000
+ e aplicamos o paralelismo na variável mais externa
+
+182
+00:15:20,000 --> 00:15:23,000
+ e fazemos o splitting do X
+
+183
+00:15:23,000 --> 00:15:28,000
+ e aplicamos a virtualização na variável mais externa, certo?
+
+184
+00:15:28,000 --> 00:15:32,000
+ Normalmente, a gente pode experimentar com diversos fatores
+
+185
+00:15:32,000 --> 00:15:38,000
+ desse número e variando manualmente os números, certo?
+
+186
+00:15:38,000 --> 00:15:50,000
+ Com isso, nós obtemos 0,1 mil segundos.
+
+187
+00:15:50,000 --> 00:15:56,000
+ Nós podemos, então, rodar novamente o prototpinho
+
+188
+00:15:56,000 --> 00:15:58,000
+ de ser mais e mais.
+
+189
+00:15:58,000 --> 00:16:02,000
+ Com o BCV,
+
+190
+00:16:12,000 --> 00:16:13,000
+ certo?
+
+191
+00:16:13,000 --> 00:16:17,000
+ E, em comparação, nós temos, em metade do tempo,
+
+192
+00:16:17,000 --> 00:16:21,000
+ na média com o relate.
+
+193
+00:16:28,000 --> 00:16:32,000
+ E, para observar, o que acontece ou se tenta executar
+
+194
+00:16:32,000 --> 00:16:36,000
+ essa mesma operação
+
+195
+00:16:36,000 --> 00:16:40,000
+ sem o roll, certo? Eu tenho um caso 5 aqui.
+
+196
+00:16:50,000 --> 00:16:54,000
+ Então, sem o roll, a gente consegue chegar
+
+197
+00:16:54,000 --> 00:17:00,000
+ abaixo do BCV na média, certo?
+
+198
+00:17:00,000 --> 00:17:04,000
+ Mas não tão rápido quanto fazendo o roll,
+
+199
+00:17:04,000 --> 00:17:09,000
+ inclusive, é também ali no range de metade do tempo
+
+200
+00:17:09,000 --> 00:17:14,000
+ em relação a esse schedule sem o roll.
+
+201
+00:17:14,000 --> 00:17:18,000
+ A gente pode testar também a reordinação,
+
+202
+00:17:19,000 --> 00:17:21,000
+ esse caso assim.
+
+203
+00:17:31,000 --> 00:17:34,000
+ E também, um pouco mais rápido, mas,
+
+204
+00:17:34,000 --> 00:17:38,000
+ o melhor tempo está na mesma ordem ali
+
+205
+00:17:38,000 --> 00:17:42,000
+ do nosso schedule 4.
+
+206
+00:17:42,000 --> 00:17:45,000
+ E na média no caso.
+
+207
+00:17:49,000 --> 00:17:53,000
+ Então, nós aplicamos o roll para tanto,
+
+208
+00:17:53,000 --> 00:17:57,000
+ possibilitar algumas optimizações do nosso código,
+
+209
+00:17:57,000 --> 00:18:03,000
+ como também é eliminar o mobs
+
+210
+00:18:03,000 --> 00:18:07,000
+ dentro do loop mais interno para o nosso pipeline.
+
+211
+00:18:07,000 --> 00:18:09,000
+ Como o leite vai recomendar,
+
+212
+00:18:09,000 --> 00:18:12,000
+ eu deixo para vocês tanto a lição
+
+213
+00:18:12,000 --> 00:18:15,000
+ de scheduling do relate, como também,
+
+214
+00:18:15,000 --> 00:18:19,000
+ o ponto em de relate, definições
+
+215
+00:18:19,000 --> 00:18:21,000
+ relacionadas às fanks, certo?
+
+216
+00:18:21,000 --> 00:18:23,000
+ Que vai contê as definições do relate,
+
+217
+00:18:23,000 --> 00:18:27,000
+ as duas definições do relate para o roll.
+
+218
+00:18:30,000 --> 00:18:32,000
+ Muito obrigado pela atenção de vocês
+
+219
+00:18:32,000 --> 00:18:33,000
+ e até a próxima.
+

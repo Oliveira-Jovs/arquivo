@@ -1,0 +1,120 @@
+1
+00:00:00,000 --> 00:00:09,320
+ As pessoas que trabalham em uma equipe de desenvolvimento de software com frequência
+
+2
+00:00:09,320 --> 00:00:14,560
+ têm que integrar, juntar as contribuições que elas individualmente em fazem para a construção
+
+3
+00:00:14,560 --> 00:00:15,560
+ do sistema.
+
+4
+00:00:15,560 --> 00:00:21,280
+ Elas normalmente fazem isso através de comandos como git-image, git-rebase e git-share-peak,
+
+5
+00:00:21,280 --> 00:00:26,120
+ que sinalizam conflitos quando as pessoas tentam mudar a mesma parte do código do sistema,
+
+6
+00:00:26,120 --> 00:00:30,960
+ como por exemplo, quando duas pessoas tentam alterar linhas consecutivas de um mesmo programa,
+
+7
+00:00:30,960 --> 00:00:36,520
+ de um mesmo método, de uma mesma classe, mas muitas vezes essas mudanças feitas individualmente
+
+8
+00:00:36,520 --> 00:00:42,280
+ por essas pessoas, apesar de serem conflitantes, não são detectadas por essas ferramentas,
+
+9
+00:00:42,280 --> 00:00:49,600
+ que infelizmente são limitadas e passam batidas e integram as contribuições de forma equivocada,
+
+10
+00:00:49,600 --> 00:00:54,280
+ o que eventualmente leva a uma falha do sistema quando eles estiverem sendo usados por seus
+
+11
+00:00:54,280 --> 00:00:59,320
+ usuários, trazendo consequências negativas para muita gente, muitas vezes consequências
+
+12
+00:00:59,320 --> 00:01:00,320
+ sérias.
+
+13
+00:01:00,320 --> 00:01:05,440
+ Para evitar essas limitações dessas ferramentas atuais de integração de código, nós no
+
+14
+00:01:05,440 --> 00:01:11,640
+ CIN, no SPG, em colaboração com pesquisadores aqui de 100 mil nos Estados Unidos, pesquisamos
+
+15
+00:01:11,640 --> 00:01:17,280
+ e desenvolvemos ferramentas complementares, que podem ser acopladas ao Git para detectar
+
+16
+00:01:17,280 --> 00:01:22,880
+ esses problemas, esses conflitos e assim evitar que eles cheguem aos usuários finais.
+
+17
+00:01:22,880 --> 00:01:27,199
+ A gente faz isso usando uma combinação de técnicas de análise estática e dinâmica
+
+18
+00:01:27,199 --> 00:01:32,640
+ de código, que assim conseguem detectar os chamados conflitos semânticos, que são justamente
+
+19
+00:01:32,640 --> 00:01:37,240
+ causados quando pessoas diferentes de uma mesma equipe alteram partes diferentes do
+
+20
+00:01:37,240 --> 00:01:43,679
+ código, mas essas partes são dependentes e precisam ser ajustadas antes de serem integradas,
+
+21
+00:01:43,679 --> 00:01:47,280
+ só que as pessoas individualmente não têm conhecimento disso.
+
+22
+00:01:47,280 --> 00:01:53,200
+ As nossas ferramentas vão justamente nessa direção de sinalizar a necessidade desses
+
+23
+00:01:53,200 --> 00:02:00,160
+ ajustes adicionais, para que o defeito possa ser antecipado e a falha do sistema é evitada.
+
+24
+00:02:00,160 --> 00:02:05,280
+ Isso é especialmente importante porque esse tipo de defeito, causado pela interferência
+
+25
+00:02:05,280 --> 00:02:11,200
+ entre mudanças feitas por duas pessoas, é muito mais difícil de ser detectado e corrigido
+
+26
+00:02:11,200 --> 00:02:15,120
+ do que os defeitos que são individualmente causados por apenas uma pessoa.
+
+27
+00:02:17,280 --> 00:02:23,120
+ E é muito mais difícil de ser detectado e corrigido do que os defeitos que são individualmente
+
+28
+00:02:23,120 --> 00:02:30,080
+ causados por apenas uma pessoa individualmente causada e corrigido do que os defeitos que são
+
+29
+00:02:30,080 --> 00:02:34,800
+ individualmente causados por apenas uma pessoa individualmente causada e corrigido do que
+
+30
+00:02:34,800 --> 00:02:39,920
+ os defeitos que são individualmente causados por apenas uma pessoa individualmente causado
+

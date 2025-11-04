@@ -1,0 +1,360 @@
+1
+00:00:00,000 --> 00:00:06,260
+ Olá, sejam muito bem-vindos a mais uma aula com o seu linguagem de programação específica
+
+2
+00:00:06,260 --> 00:00:12,180
+ para ir a hoje, e temos esforar mais alguns conceitos de scheduling.
+
+3
+00:00:12,180 --> 00:00:17,760
+ Caso o conceito de hoje será o Onroll, ele, como a gente viu naquele exemplo,
+
+4
+00:00:17,760 --> 00:00:24,000
+ da data com a geração de uma geração de uma geração de fibrinante, pode ser utilizado
+
+5
+00:00:24,000 --> 00:00:30,020
+ para diminuir o número de terações, a costa do tamanho do corpo do loupe,
+
+6
+00:00:30,020 --> 00:00:31,020
+ certo?
+
+7
+00:00:31,020 --> 00:00:35,019
+ Então nós vamos aumentar o corpo do loupe, a fim de diminuir o número de gerações.
+
+8
+00:00:35,019 --> 00:00:42,200
+ A gente pode ver o que ele tem um efeito de como se, esse que está assistido
+
+9
+00:00:42,200 --> 00:00:50,700
+ multiplais de terações, e o que seria uma só no loupe transformado, ele pode ser
+
+10
+00:00:50,700 --> 00:00:54,700
+ o outro para quando a gente tem piquem seu estimando de pulondados em comuns,
+
+11
+00:00:54,700 --> 00:01:01,200
+ e um padrão específico que a gente vai frequentemente, às vezes é o outro
+
+12
+00:01:01,200 --> 00:01:06,160
+ de usar Onroll, é quando a gente tem mais de um canal, e que é se para ter executar o
+
+13
+00:01:06,160 --> 00:01:09,160
+ assigne desses canais, certo?
+
+14
+00:01:09,160 --> 00:01:15,240
+ Em sequência, então, um atrás do outro, sem uma criação de novo loupe, ele tem
+
+15
+00:01:15,240 --> 00:01:20,960
+ duas sintaxis, a primeira delas, é só passando um avar para dentro desse
+
+16
+00:01:20,960 --> 00:01:26,880
+ Onroll, e a outra avar em um fator, ele vai ser utilizado com um bão de ou com
+
+17
+00:01:26,880 --> 00:01:33,440
+ o Split, no caso aqui, quando a gente quer fazer um Onroll, por exemplo, de um avar
+
+18
+00:01:33,440 --> 00:01:39,840
+ que não seja os canais, acho que é normalmente precisar fazer um Split dessa avar,
+
+19
+00:01:40,160 --> 00:01:45,320
+ e a gente faz o Split com um fator, e depois aplicamos um Onroll nessa avar, que vai
+
+20
+00:01:45,320 --> 00:01:51,240
+ estar ali bem enternando no alinhamento do loupe, certo?
+
+21
+00:01:51,240 --> 00:01:56,540
+ Uma outra opção é você se pedir fazer essa sintaxe aqui em Onroll, passando o
+
+22
+00:01:56,540 --> 00:02:05,880
+ avar e depois o fator, a diferença que você vai ficar, vai ficar escondido, o Split,
+
+23
+00:02:05,880 --> 00:02:12,640
+ etc, ele vai escondir esse Split, para o exemplo dos canais, que a gente vai
+
+24
+00:02:12,640 --> 00:02:17,280
+ estar utilizando esse bão de aqui, então, nós vamos, na verdade, utilizar tanto
+
+25
+00:02:17,280 --> 00:02:24,480
+ o Rui Order como bão de, para mover os canais, para a parte mais interna do loupe,
+
+26
+00:02:24,480 --> 00:02:31,640
+ certo? O bão de, ele vai dizer por relax, que a minha variável do canal é limitada entre
+
+27
+00:02:31,720 --> 00:02:37,320
+ zero a três, certo? Então, ele é RGB, sempre que vai trabalhar em Rui Order com o mínimo
+
+28
+00:02:37,320 --> 00:02:43,280
+ e o existente, né, que é o, a extensão, naquela limensão, então a gente vai passar
+
+29
+00:02:43,280 --> 00:02:48,480
+ para o bão de, a variável, o mínimo que vai ser zero e o existente que vai ser três,
+
+30
+00:02:48,480 --> 00:02:55,440
+ aqui são três canais, e a parte disso, né, diferentemente das taxas de comuns
+
+31
+00:02:55,440 --> 00:03:01,000
+ Split, a gente sabe os limites que esse do prêmico rei, a gente sabe qual é os limites da
+
+32
+00:03:01,000 --> 00:03:06,600
+ minha variável, então a gente tem o utilizão bão de, para passar essa informação, para um
+
+33
+00:03:06,600 --> 00:03:12,200
+ rol depois, né, no caso, onde a gente não sabe a dimensão do loupe, que vai ser,
+
+34
+00:03:12,200 --> 00:03:16,880
+ no caso, a gente tem uma variável, que não seja aquela descanais, por exemplo, a gente
+
+35
+00:03:16,880 --> 00:03:23,720
+ vai ter, tal utilizando essa sentar que se com o Splitim, iríamos agora verificar
+
+36
+00:03:23,720 --> 00:03:29,600
+ aquela prática, a utilização do rol, eu tenho aqui um exemplo, onde eu estou aplicando
+
+37
+00:03:29,600 --> 00:03:35,680
+ um efeito sépio em uma imagem, certo, então nós temos, é um efeito de falta antiga
+
+38
+00:03:35,680 --> 00:03:42,400
+ sendo aplicado, primeiramente, mostrando o protótipo de Python para a gente ter um guia,
+
+39
+00:03:42,400 --> 00:03:49,760
+ da atualização, certo, do runtime e nesse papel, né, eu vou rodar o protótipo aqui,
+
+40
+00:03:50,160 --> 00:04:08,600
+ e nós temos em Python, a velocidade é de 20, é, em casa, ele está demorando 23 mil
+
+41
+00:04:08,600 --> 00:04:14,120
+ segundos, no caso 24 mil segundos, para completar a execução dá para que lá, em
+
+42
+00:04:14,120 --> 00:04:20,200
+ a média, no pior caso, está em 46 mil segundos e, no melhor caso, 20 mil segundos,
+
+43
+00:04:20,200 --> 00:04:27,600
+ agora que lá, ele é simples, ela só envolve, multiplicar os canais da imagem por diversos
+
+44
+00:04:27,600 --> 00:04:34,920
+ fatores, certo, cada canal novo, ele vai ter, constir três fatores associados a ele, certo, então,
+
+45
+00:04:34,920 --> 00:04:41,600
+ cada novo canal da mimagem, cada novo RGB, é uma ponderação dos RGB anteriores, né,
+
+46
+00:04:41,680 --> 00:04:50,840
+ e se as, após isso eu faço o margin desses canais, com vez do praio, em que ele a versão
+
+47
+00:04:50,840 --> 00:04:58,840
+ clipada dele, ou seja, mantida 23 zeros, isso é assim, eu tenho aqui também um protótipo
+
+48
+00:04:58,840 --> 00:05:10,480
+ implementado de ser mais mais com o PCV, então, é a nossa segunda referência de tempo, e nós
+
+49
+00:05:10,560 --> 00:05:17,440
+ esperamos, né, um tempo pouco, menor de execução, em relação ao Python,
+
+50
+00:05:17,440 --> 00:05:41,760
+ já tivemos aqui, o restado do PCV, é igualzinho ao Python, e, no caso, a gente tem
+
+51
+00:05:41,760 --> 00:05:54,719
+ esse 0,3 mil segundos na média, em comparação ao Python, com seus 20,3 mil segundos,
+
+52
+00:05:54,719 --> 00:06:01,800
+ no melhor caso, tem 0,1,9 mil segundos, ele é um pior caso, 4 mil segundos, certo, então,
+
+53
+00:06:01,800 --> 00:06:12,120
+ mais rápido que o Python, vamos então ver se a gente consegue chegar mais rápido com o relâio, então,
+
+54
+00:06:12,120 --> 00:06:18,440
+ não tem aqui para que vai implementar no relâio, de com o genelito, e com um parâmetro,
+
+55
+00:06:18,440 --> 00:06:29,920
+ para selecionar o buscar o somizado, certo, e aí, o que a gente tem aqui é esse MUX,
+
+56
+00:06:29,920 --> 00:06:40,600
+ e aí, no caso, a gente vai poder observar, um das maiores utilidades do Android, que é a eliminação
+
+57
+00:06:40,600 --> 00:06:46,640
+ do select para fazer esse assaino dos canais, certo, então, vai ter um box aqui, a gente consegue
+
+58
+00:06:46,640 --> 00:06:55,840
+ converter, vai ter, dessa multiplexação, a gente vai converter isso aqui, para executar o assaino,
+
+59
+00:06:55,840 --> 00:07:04,600
+ como depois do outro, dentro do loop mais interno da minha, da minha para que foi ele, então,
+
+60
+00:07:04,600 --> 00:07:10,720
+ eu tenho aqui, primeiro, a utilização, com o parâmetro, diz uma pena, se não é picada, no
+
+61
+00:07:10,720 --> 00:07:16,920
+ option, isso aí dá sem mais, então, nós vamos ver de capo, ainda sem o on roll, certo,
+
+62
+00:07:16,920 --> 00:07:35,800
+ uma aplicação mais simples, diz que a gente, ouve tem um código, também bem mais rápido
+
+63
+00:07:35,800 --> 00:07:45,280
+ que um parâmetro mais lento que o opcv, inclusive, o melhor tempo dessa execução, em
+
+64
+00:07:45,280 --> 00:08:03,760
+ realite, está se me anda a média em relação ao opcv, acho que podemos então agora verificar
+
+65
+00:08:03,760 --> 00:08:08,760
+ o seto enfile, que eu tenho já que eu quero agradar aqui, eu só preciso recargar essa página,
+
+66
+00:08:09,320 --> 00:08:17,039
+ vamos deixar o assaino ali, e verificar aqui, naquia a gente tem esse box aqui dentro,
+
+67
+00:08:17,039 --> 00:08:26,280
+ internamente não, a gente tem que o e-son sendo executado em parâmetro, e dentro do
+
+68
+00:08:26,280 --> 00:08:44,280
+ anox, pode mais internas, tem esse box aqui, certo, então, vamos remover esses motos, como
+
+69
+00:08:44,280 --> 00:08:49,760
+ a gente viu, meus ideais, a gente tem que utilizar algumas diretivas junto do meu um roll,
+
+70
+00:08:49,760 --> 00:08:54,840
+ para poder ter o comportamento que nós esperamos, a primeira delas, como mencionar, é o
+
+71
+00:08:54,840 --> 00:09:24,840
+ que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é
+
+72
+00:09:24,840 --> 00:09:54,840
+ o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que
+
+73
+00:09:54,840 --> 00:10:24,840
+ é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o
+
+74
+00:10:24,840 --> 00:10:54,840
+ que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é
+
+75
+00:10:54,840 --> 00:11:24,840
+ o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que
+
+76
+00:11:24,840 --> 00:11:54,840
+ é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o
+
+77
+00:11:54,840 --> 00:12:24,840
+ que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é
+
+78
+00:12:24,840 --> 00:12:54,840
+ o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que
+
+79
+00:12:54,840 --> 00:13:24,840
+ é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o
+
+80
+00:13:24,840 --> 00:13:54,840
+ que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é
+
+81
+00:13:54,840 --> 00:14:24,840
+ o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que
+
+82
+00:14:24,840 --> 00:14:54,840
+ é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o
+
+83
+00:14:54,840 --> 00:15:24,840
+ que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é
+
+84
+00:15:24,840 --> 00:15:54,840
+ o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que
+
+85
+00:15:54,840 --> 00:16:24,840
+ é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o
+
+86
+00:16:24,840 --> 00:16:54,840
+ que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é
+
+87
+00:16:54,840 --> 00:17:24,840
+ o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que
+
+88
+00:17:24,839 --> 00:17:54,840
+ é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o
+
+89
+00:17:54,840 --> 00:18:24,840
+ que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é
+
+90
+00:18:24,840 --> 00:18:33,470
+ o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que é o que
+

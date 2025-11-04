@@ -1,0 +1,528 @@
+1
+00:00:00,000 --> 00:00:06,240
+ Olá, seja muito bem-vindos a mais uma aula do curso de linguagem de programação específica
+
+2
+00:00:06,240 --> 00:00:13,400
+ para IA. Hoje iremos explorar mais alguns conceitos de scheduling. O caso do conceito
+
+3
+00:00:13,400 --> 00:00:21,120
+ de hoje será o Unroll. Ele, como a gente viu naquele exemplo idático com a geração
+
+4
+00:00:21,120 --> 00:00:27,520
+ de números de Fibonacci, pode ser utilizado para diminuir o número de interações a custo
+
+5
+00:00:27,520 --> 00:00:32,920
+ do tamanho do corpo do loop, certo? Então nós vamos aumentar o corpo do loop a fim
+
+6
+00:00:32,920 --> 00:00:41,360
+ de diminuir o número de interações. Aí a gente viu que ele tem o efeito de como se
+
+7
+00:00:41,360 --> 00:00:50,519
+ executasse múltiplas interações em o que seria um a só no loop transformado. Ele pode
+
+8
+00:00:50,519 --> 00:00:56,000
+ ser útil para quando a gente tem pixels que manipulam dados incomunes e um padrão específico
+
+9
+00:00:56,000 --> 00:01:03,080
+ que a gente vai ver frequentemente que às vezes é útil utilizar o Unroll é quando
+
+10
+00:01:03,080 --> 00:01:09,960
+ a gente tem mais de um canal e quer se pre-executar o assign desses canais, certo? Em sequência,
+
+11
+00:01:09,960 --> 00:01:16,280
+ então um atrás do outro sem uma criação de um novo loop. Ele tem duas sintaxes, a
+
+12
+00:01:16,280 --> 00:01:25,039
+ primeira delas é só passando um AVAR para dentro desse Unroll e a outra AVAR em um fator.
+
+13
+00:01:25,040 --> 00:01:31,640
+ Ele vai ser utilizado com Bound ou com Split. No caso aqui, quando a gente quer fazer um
+
+14
+00:01:31,640 --> 00:01:37,000
+ Unroll, por exemplo, de um AVAR que não sejam os canais, a gente normalmente precisa fazer
+
+15
+00:01:37,000 --> 00:01:43,680
+ um Split dessa AVAR, certo? E a gente faz o Split com o fator e depois aplica um Unroll
+
+16
+00:01:43,680 --> 00:01:52,160
+ nessa AVAR que vai estar ali bem interna no alinhamento do loop, certo? Uma outra opção
+
+17
+00:01:52,160 --> 00:01:59,520
+ é você fazer essa sintaxe aqui, Unroll, passando o AVAR e depois o fator. A diferença
+
+18
+00:01:59,520 --> 00:02:11,680
+ é que você vai ficar escondido o Split, certo? Ele vai esconder esse Split. Para o exemplo
+
+19
+00:02:11,680 --> 00:02:16,359
+ dos canais, o que a gente vai estar utilizando é esse Bound aqui. Então, nós vamos, na
+
+20
+00:02:16,360 --> 00:02:23,720
+ verdade, utilizar tanto o Reorder como o Bound para mover os canais para a parte mais interna
+
+21
+00:02:23,720 --> 00:02:30,200
+ do loop, certo? O Bound, ele vai dizer para o Relight que a minha variável do canal é
+
+22
+00:02:30,200 --> 00:02:36,600
+ limitada entre 0 a 3, certo? Então ali RGB. Sempre que eu ir trabalhar em Relight com
+
+23
+00:02:36,600 --> 00:02:43,280
+ o mínimo e o extente, que é a extensão daquela dimensão. Então a gente vai passar
+
+24
+00:02:43,280 --> 00:02:48,760
+ para o Bound a variável, o mínimo que vai ser 0 e o extente que vai ser 3, que são
+
+25
+00:02:48,760 --> 00:02:58,960
+ 3 canais. E a partir disso, diferentemente da sintaxe com o Split, a gente sabe os limites
+
+26
+00:02:58,960 --> 00:03:02,720
+ que esse loop vai percorrer, a gente sabe qual é os limites da minha variável. Então
+
+27
+00:03:02,720 --> 00:03:09,240
+ a gente utiliza o Bound para passar essa informação para o Unroll depois. No caso onde a gente
+
+28
+00:03:09,240 --> 00:03:14,280
+ não sabe a dimensão do loop, que vai ser nos casos onde a gente tem uma variável que
+
+29
+00:03:14,280 --> 00:03:19,440
+ não seja aquela dos canais, por exemplo, a gente vai estar utilizando essa sintaxe com
+
+30
+00:03:19,440 --> 00:03:27,400
+ o Splitting. Iremos agora verificar na prática a utilização do Unroll. Eu tenho aqui um
+
+31
+00:03:27,400 --> 00:03:34,400
+ exemplo onde eu estou aplicando um efeito sepia em uma imagem, certo? Então nós temos um
+
+32
+00:03:34,440 --> 00:03:41,440
+ efeito de falta antiga sendo aplicado. Primeiramente mostrando um protótipo de Python para a gente
+
+33
+00:03:41,440 --> 00:03:49,440
+ ter um guia da temporização, certo? Do runtime dessa pipeline. Eu vou rodar o protótipo
+
+34
+00:03:49,440 --> 00:03:56,440
+ aqui. E nós temos em Python a velocidade ali de 20, no caso está demorando 23 milissegundos,
+
+35
+00:04:09,160 --> 00:04:15,520
+ no caso 24 milissegundos, para completar a execução da pipeline na média. No pior
+
+36
+00:04:15,600 --> 00:04:22,360
+ caso, está em 46 milissegundos e no melhor caso, 20 milissegundos. A pipeline é simples,
+
+37
+00:04:22,360 --> 00:04:29,360
+ ela só envolve multiplicar os canais da imagem por diversos fatores, certo? Cada canal novo
+
+38
+00:04:30,360 --> 00:04:36,880
+ ele vai ter um conjunto de três fatores associados a ele, certo? Então cada novo canal da imagem,
+
+39
+00:04:36,880 --> 00:04:43,880
+ cada novo RGB, é uma ponderação dos RGB anteriores, iniciais. Após isso eu faço
+
+40
+00:04:44,880 --> 00:04:51,880
+ o merging desses canais, com o vésito para a Uinti8 a versão clipada dele, ou seja, mantida
+
+41
+00:04:52,680 --> 00:04:59,680
+ ali entre 0 e 55. Eu tenho aqui também um protótipo implementado em C++ com OpenCV,
+
+42
+00:05:04,400 --> 00:05:11,400
+ então é a nossa segunda referência de tempo e nós esperamos um tempo um pouco menor,
+
+43
+00:05:14,719 --> 00:05:21,719
+ de execução em relação ao Python. Já o termos aqui, o resultado do OpenCV, está
+
+44
+00:05:21,720 --> 00:05:28,720
+ igualzinho ao do Python, e no caso a gente tem aqui 0,3 milissegundos na média, em comparação
+
+45
+00:05:43,480 --> 00:05:50,480
+ ao Python, com seus 20 e 30 milissegundos, então a gente tem aqui 0,3 milissegundos
+
+46
+00:05:52,720 --> 00:05:59,720
+ no melhor caso a gente tem 0,19 milissegundos e no pior caso 4 milissegundos, certo? Então
+
+47
+00:06:01,480 --> 00:06:06,680
+ está bem mais rápido que o Python. Vamos então ver se a gente consegue chegar mais
+
+48
+00:06:06,680 --> 00:06:13,680
+ rápido com o RayLighter. Então eu tenho aqui a pipeline implementada no RayLighter, com
+
+49
+00:06:14,680 --> 00:06:21,680
+ um Generator e com um parâmetro aqui para selecionar o Schedule customizado, certo?
+
+50
+00:06:25,800 --> 00:06:32,800
+ E aí o que a gente tem aqui é esse MOOCs, e aí no caso a gente vai poder observar uma
+
+51
+00:06:36,040 --> 00:06:42,800
+ das maiores utilidades do Unroll, que é a eliminação do Select para fazer esse Assign
+
+52
+00:06:42,800 --> 00:06:48,800
+ dos canais, certo? Então a gente tem um MOOCs aqui e a gente consegue converter, ao invés
+
+53
+00:06:48,800 --> 00:06:55,800
+ de ter essa multiplexação, a gente vai converter isso daqui para executar o Assign um depois
+
+54
+00:06:56,200 --> 00:07:03,200
+ do outro ali, dentro do loop mais interno da minha pipeline. Então eu tenho aqui primeiro
+
+55
+00:07:04,200 --> 00:07:11,200
+ a utilização com o paralelismo apenas sendo aplicado no y desse lado dessa imagem. Então
+
+56
+00:07:13,560 --> 00:07:20,560
+ nós vamos verificar ainda sem o Unroll, certo? Uma aplicação mais simples de Skylark.
+
+57
+00:07:21,560 --> 00:07:28,560
+ Ao executar isso aqui a gente obtém um código também bem mais rápido que o Python, mas
+
+58
+00:07:37,320 --> 00:07:44,320
+ mais lento que eu vou perceber. Inclusive o melhor tempo dessa execução em RayLight
+
+59
+00:07:45,320 --> 00:07:52,320
+ é estar assinando a média em relação ao OpenCV, certo?
+
+60
+00:08:01,520 --> 00:08:06,520
+ Nós podemos então agora verificar o statement file, que eu tenho já carregado aqui, eu
+
+61
+00:08:06,520 --> 00:08:13,520
+ só preciso recarregar essa página. Vamos fechar o assembly e verificar aqui que está
+
+62
+00:08:15,000 --> 00:08:22,000
+ esse MOOCs aqui dentro, internamente no... a gente tem aqui o y sendo executado em paralelo
+
+63
+00:08:25,719 --> 00:08:32,720
+ e dentro do x, na parte mais interna a gente tem esse MOOCs aqui, certo?
+
+64
+00:08:32,720 --> 00:08:39,720
+ Então, vamos remover esse MOOCs. Como a gente viu nos slides a gente tem que utilizar algumas
+
+65
+00:08:46,280 --> 00:08:53,280
+ diretivas junto do meu Unroll para poder ter o comportamento que nós esperamos. A primeira
+
+66
+00:08:53,440 --> 00:08:58,880
+ delas, como mencionado, é o Reorder. Nós precisamos mover os canais para a parte mais
+
+67
+00:08:59,000 --> 00:09:05,280
+ interna do loop, certo? A gente tem que garantir que eles estejam na parte mais interna do
+
+68
+00:09:05,280 --> 00:09:12,280
+ alinhamento do loop. Seguinte a isso, utilizamos o Bound para estabelecer os limites da minha
+
+69
+00:09:13,960 --> 00:09:20,960
+ var, que é os canais. E aí eu tenho o mínimo, que é zero, e a extensão dessa minha dimensão,
+
+70
+00:09:21,120 --> 00:09:27,520
+ que vai ser o 3, então a gente vai de zero até 2, né? Zero, um e dois. E seguinte a
+
+71
+00:09:27,520 --> 00:09:34,520
+ isso nós executamos o Unroll. Eu posso remover isso aqui para que a gente veja um efeito
+
+72
+00:09:35,840 --> 00:09:42,840
+ que pode ser observado quando vocês estiverem utilizando essas diretivas, certo? Então,
+
+73
+00:09:43,319 --> 00:09:50,319
+ ao rodar o caso 1, a gente tem ainda uma papelada um pouco mais lenta, inclusive, e ao verificar
+
+74
+00:09:57,720 --> 00:10:04,720
+ a atualização aqui do Statement File, vou aumentar um pouco, nós temos o seguinte,
+
+75
+00:10:15,600 --> 00:10:22,600
+ são três versões aqui da minha execução, certo? Uma para cada um daqueles canais.
+
+76
+00:10:23,600 --> 00:10:30,600
+ Então, é como se o relator estivesse considerando o C, o canal, como o loop mais externo.
+
+77
+00:10:31,600 --> 00:10:38,600
+ Estamos executando agora com o Computing Root, para ver o que o relator está fazendo por
+
+78
+00:10:38,600 --> 00:10:45,600
+ padrão com essa nossa Plattline. Eu vou recarregar o meu Statement File, e como esperado, o relator
+
+79
+00:10:54,040 --> 00:11:00,560
+ vai estar em um lugar que eu vou fazer o que eu quero, eu vou fazer o que eu quero, eu
+
+80
+00:11:00,560 --> 00:11:07,560
+ vou fazer o que eu quero, eu vou fazer o que eu quero, eu vou fazer o que eu quero, eu
+
+81
+00:11:08,800 --> 00:11:13,800
+ vou fazer o que eu quero, eu vou fazer o que eu quero, eu vou fazer o que eu quero, eu
+
+82
+00:11:13,800 --> 00:11:18,800
+ vou fazer o que eu quero, eu vou fazer o que eu quero, eu vou fazer o que eu quero, eu
+
+83
+00:11:18,800 --> 00:11:23,800
+ vou fazer o que eu quero, eu vou fazer o que eu quero, eu vou fazer o que eu quero, eu
+
+84
+00:11:23,800 --> 00:11:28,800
+ vou fazer o que eu quero, eu vou fazer o que eu quero, eu vou fazer o que eu quero, eu
+
+85
+00:11:28,800 --> 00:11:32,800
+ vou fazer o que eu quero, eu vou fazer o que eu quero, eu vou fazer o que eu quero, eu
+
+86
+00:11:32,800 --> 00:11:37,800
+ vou fazer o que eu quero, eu vou fazer o que eu quero, eu vou fazer o que eu quero,
+
+87
+00:11:38,000 --> 00:11:46,000
+ vamos então remover e passar a fazer o E-Order junto com as duas outras diretivas.
+
+88
+00:11:56,000 --> 00:12:06,000
+ Ok, a gente tem um pouco mais rápido do que o nosso teste lá inicial com aqueles três
+
+89
+00:12:06,200 --> 00:12:11,200
+ loops, certo? Mas ainda não tão rápido quanto o Parallel e também não tão rápido
+
+90
+00:12:11,200 --> 00:12:19,200
+ quanto o OpenCV. Vamos então prosseguir com o Scheduling dessa Pipeline, mas antes
+
+91
+00:12:19,200 --> 00:12:26,200
+ passando para verificar a nova estrutura obtida no Statement File.
+
+92
+00:12:26,400 --> 00:12:36,400
+ Então, nós temos aqui que temos o loop mais externo em meio de output pelo Y, depois
+
+93
+00:12:36,400 --> 00:12:42,400
+ pelo X e os três canais sendo feito o Assign em sequência, um após o outro.
+
+94
+00:12:42,600 --> 00:12:55,600
+ Iremos então passar para o caso dois, que é a aplicação do Parallelism após esse
+
+95
+00:12:55,600 --> 00:13:00,600
+ Unroll, dessa forma com o E-Order e o Bounding.
+
+96
+00:13:00,800 --> 00:13:18,800
+ Achamos agora um aumento na velocidade em comparação inclusive ao Schedule 0 aqui,
+
+97
+00:13:18,800 --> 00:13:27,800
+ onde a gente chegou a 0.29 milissegundos, com o OpenCV aqui já na média, já atingindo
+
+98
+00:13:28,000 --> 00:13:36,000
+ um valor menor, certo? Inclusive o pior caso também já tem uma boa diferença.
+
+99
+00:13:36,000 --> 00:13:48,000
+ Nós podemos prosseguir com o nosso Scheduling fazendo, testando o Splitting e executando
+
+100
+00:13:48,000 --> 00:13:53,000
+ o Parallelismo a partir desse Splitting do Y, certo? Então ao invés de paralelizar
+
+101
+00:13:53,200 --> 00:13:58,200
+ a var Y pura, a gente vai fazer um Splitting nela antes de aplicar o Parallelism.
+
+102
+00:13:58,200 --> 00:14:05,200
+ E novamente, como antes, eu estou utilizando o Vector Size obtido com a função Natural
+
+103
+00:14:05,200 --> 00:14:11,200
+ Vector Size do Relight como uma guia para minha experimentação. É só um valor que
+
+104
+00:14:11,200 --> 00:14:18,200
+ eu posso rapidamente experimentar vários fatores dele como uma guia, certo? No caso
+
+105
+00:14:18,400 --> 00:14:25,400
+ de aplicar ele por 8. Então nós vamos executar aqui o caso 3.
+
+106
+00:14:32,400 --> 00:14:42,400
+ Ele é um pouco mais lento que a versão anterior. A gente pode experimentar e modificar esse
+
+107
+00:14:42,600 --> 00:14:49,600
+ Vector Size e ver se a gente obtém um tempo um pouco melhor.
+
+108
+00:14:53,600 --> 00:14:58,600
+ Ele está um pouco mais rápido, mas ainda assim não superou o nosso Schedule 2.
+
+109
+00:14:58,600 --> 00:15:05,600
+ Nós iremos observar o Schedule 4 onde a gente encadeia o Splitting com a Vectorização,
+
+110
+00:15:05,800 --> 00:15:14,800
+ certo? O Parallelismo com a Vectorização. Nós executamos o nosso Unroll, fazemos o Splitting
+
+111
+00:15:14,800 --> 00:15:21,800
+ do Y e aplicamos o Parallelismo na variável mais externa e fazemos o Splitting do X e
+
+112
+00:15:23,300 --> 00:15:27,800
+ aplicamos a Vectorização na variável mais interna, certo?
+
+113
+00:15:27,800 --> 00:15:33,800
+ Novamente a gente pode experimentar com diversos fatores desse número ou simplesmente ir
+
+114
+00:15:34,000 --> 00:15:39,000
+ variando manualmente os números, certo?
+
+115
+00:15:48,000 --> 00:15:56,000
+ Com isso nós obtemos 0,1 milissegundos. Nós podemos então rodar novamente o Prototype
+
+116
+00:15:56,000 --> 00:15:59,000
+ C++, como você vê.
+
+117
+00:16:04,000 --> 00:16:11,000
+ Certo? E em comparação nós temos aí metade do tempo na média com o Relight.
+
+118
+00:16:23,000 --> 00:16:30,000
+ E aí, para observar o que acontece se você tenta executar essa mesma operação, você
+
+119
+00:16:31,000 --> 00:16:38,000
+ tenta executar essa mesma operação sem o Unroll, certo? Eu tenho o caso 5 aqui.
+
+120
+00:16:45,000 --> 00:16:52,000
+ Ok? Então sem o Unroll a gente consegue chegar abaixo do OpenCV na média, certo?
+
+121
+00:17:00,000 --> 00:17:07,000
+ Mas não tão rápido quanto fazendo o Unroll. Inclusive, é também ali no range de metade
+
+122
+00:17:07,800 --> 00:17:12,800
+ do tempo em relação a esse Schedule sem o Unroll.
+
+123
+00:17:12,800 --> 00:17:19,800
+ A gente pode testar também a Reordenação, nesse caso 5.
+
+124
+00:17:30,800 --> 00:17:37,800
+ E aí também é um pouco mais rápido, mas o melhor tempo está na mesma ordem ali do
+
+125
+00:17:37,800 --> 00:17:40,800
+ nosso Schedule, ou 4.
+
+126
+00:17:41,800 --> 00:17:43,800
+ Aqui na média, no caso.
+
+127
+00:17:49,800 --> 00:17:56,800
+ Então nós aplicamos o Unroll para tanto possibilitar algumas otimizações do nosso
+
+128
+00:17:57,600 --> 00:18:04,600
+ Regal, como também eliminar o Moops dentro do Loop mais interno da nossa Pipeline.
+
+129
+00:18:08,600 --> 00:18:13,600
+ Como letra recomendada, eu deixo para vocês tanto a lição de Scheduling do Relight,
+
+130
+00:18:13,600 --> 00:18:20,600
+ como também, novamente, o ponto em que Relight define ali definições relacionadas às Funcs,
+
+131
+00:18:21,400 --> 00:18:26,400
+ que vai conter as definições do Relight, as duas definições do Relight, para o Unroll.
+
+132
+00:18:30,400 --> 00:18:32,400
+ Muito obrigado pela atenção de vocês e até a próxima.
+
