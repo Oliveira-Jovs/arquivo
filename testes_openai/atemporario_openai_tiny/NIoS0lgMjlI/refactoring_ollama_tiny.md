@@ -1,0 +1,11 @@
+As pessoas que trabalham em um equipel de desenvolvimento de software com frequência têm alguém que junta as contribuições que elas individualmente fazem em fase para a construção do sess name.
+
+A gente não aumenta isso através de comandos como Guítima Edge, Guítima Rebase e Giltcher Pic, que se analisa um conflito quando as pessoas têm modificado a mesma parte do código de sess name, como por exemplo, quando duas pessoas têm então alterado nisso com executíveis de um mesmo problema, de um mesmo método, de um mesmo a classe. 
+
+Mais muitas vezes essa mudança é feita individualmente por essas pessoas, apesar de serem conflitantes, não são detetadas por essas ferramentas, que infelizmente são limitadas e passam batidas, e integram as contribuições de forma que focada, o que é eventualmente lá é uma falha do sistema, quando eles estão sendo usados por seus usuários, trazendo consequências negativas para muita gente, muitas vezes possa conhecer séries.
+
+Para evitar essas limitações dessas ferramentas atuais de integração de código, nós não estamos sozinhos no mundo em colaboração, com pesquisadores aqui dos Estados Unidos, pesquisamos e desenvolvemos. 
+
+E envolvemos ferramentas complementares que podem ser acopladas ao gíte para detectar esses problemas e esses conflitos e assim evitar que eles cheguem aos usuários finais. A gente faz isso usando uma combinação de técnicas de análise estática de nâmica de córlico, que assim consegue detectar os chamados conflitos semânticos, que são justamente causados com pessoas diferentes de uma mesma equipe, ao ter uma parte diferente do córlico, mas essas partes são dependentes e precisam ser ajustadas antes de serem integradas, só que as pessoas individualmente não têm conhecimento disso.
+
+As nossas ferramentas vão justamente nessa direção de se analisar, de desajos desalicionais, para que o defeito possa ser antecipado e a falha do sistema evitada. Isso é especialmente importante porque esse tipo de defeito causado pela interferência entre mudanças

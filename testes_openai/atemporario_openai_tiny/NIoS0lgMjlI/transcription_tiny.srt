@@ -1,0 +1,104 @@
+1
+00:00:00,000 --> 00:00:09,880
+As pessoas que trabalham em um equipel de desenvolvimento de software, com frequência tem quem
+
+2
+00:00:09,880 --> 00:00:15,120
+o Tegrá, juntar as contribuições que elas individualmente em fase para construção do
+
+3
+00:00:15,120 --> 00:00:16,120
+sess name.
+
+4
+00:00:16,120 --> 00:00:20,260
+A gente não aumento faz em isso através de comanhos como Guítima Edge, Guítima Rebase e
+
+5
+00:00:20,260 --> 00:00:24,760
+Giltcher Pic, que se analisa um conflito quando as pessoas têm tomuladas a mesma parte do
+
+6
+00:00:24,760 --> 00:00:29,080
+código de sess name, como por exemplo, quando duas pessoas têm então alteral nisso com
+
+7
+00:00:29,080 --> 00:00:33,080
+executíveis de um mesmo problema, de um mesmo método, de um mesmo a classe.
+
+8
+00:00:33,080 --> 00:00:38,080
+Mais muitas vezes essa mudança esfeita, individualmente, por essas pessoas,
+
+9
+00:00:38,080 --> 00:00:42,080
+apesar de serem confletrantes, não são detertadas por essas ferramentas,
+
+10
+00:00:42,080 --> 00:00:48,880
+que infelizmente são limitadas e passam batidas, e integram as contribuições de forma que
+
+11
+00:00:48,880 --> 00:00:53,080
+focada, o que é eventualmente lá é uma fala do sistema, quando eles tivessem
+
+12
+00:00:53,080 --> 00:00:58,080
+sendo usado por seus usuários, trazendo consequências negativas para muita gente,
+
+13
+00:00:58,080 --> 00:01:03,080
+muitas vezes possa conhecer séries. Para evitar essas limitações, dessas ferramentas
+
+14
+00:01:03,080 --> 00:01:08,080
+atuais de integração de fódeo, nós não simmos a世界 em colaboração,
+
+15
+00:01:08,080 --> 00:01:12,080
+com pesquisadores aqui de 1.1 Estados Unidos, pesquisamos e desmigamos.
+
+16
+00:01:23,080 --> 00:01:38,080
+E envolvemos ferramentas complementares que podem ser acopladas ao gíte para detectar esses problemas
+
+17
+00:01:38,080 --> 00:01:44,080
+e esses confletos e assim evitar que eles cheguem os usuários finais. A gente faz isso usando
+
+18
+00:01:44,080 --> 00:01:49,080
+uma combinação de técnicas de denalhos estáticas de nâmica de córlico, que assim consegue
+
+19
+00:01:49,080 --> 00:01:55,080
+detectar os chamados conflitos sem úticos, que são justamente causados com pessoas diferentes
+
+20
+00:01:55,080 --> 00:02:01,080
+de uma mesma equipe, ao ter um parte diferente do córlico, mas essas partes são dependentes e precisam
+
+21
+00:02:01,080 --> 00:02:07,080
+ser ajustadas antes de ser nenta gradas, só que as pessoas indivigomentam não têm conhecimento
+
+22
+00:02:07,080 --> 00:02:12,080
+disso. As nossas ferramentas vão justamente nessa direção de se analisar,
+
+23
+00:02:12,080 --> 00:02:20,080
+de desajos desalicionais, para que o defeito possa ser antecipado e a falha do sistema evitada.
+
+24
+00:02:20,080 --> 00:02:26,080
+Isso é especialmente importante porque esse tipo de defeito causado pela interferência entre mudanças feitas
+
+25
+00:02:26,080 --> 00:02:32,080
+por duas pessoas, é muito mais difícil de ser detectado e corrigido do que os defeitos que são
+
+26
+00:02:32,080 --> 00:02:35,080
+individualmente causados por apenas um e pessoa.
+

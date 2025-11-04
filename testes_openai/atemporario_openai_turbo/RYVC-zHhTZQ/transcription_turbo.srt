@@ -1,0 +1,116 @@
+1
+00:00:00,000 --> 00:00:09,300
+As pessoas que trabalham em uma equipe de desenvolvimento de software com frequência
+
+2
+00:00:09,300 --> 00:00:14,520
+tem que integrar, juntar as contribuições que elas individualmente fazem para a construção
+
+3
+00:00:14,520 --> 00:00:15,520
+do sistema.
+
+4
+00:00:15,520 --> 00:00:21,300
+Elas normalmente fazem isso através de comandos como git-mag, git-rebase e git-sharypeak,
+
+5
+00:00:21,300 --> 00:00:26,000
+que sinalizam conflitos quando as pessoas tentam mudar a mesma parte do código do sistema,
+
+6
+00:00:26,000 --> 00:00:30,940
+como por exemplo quando duas pessoas tentam alterar linhas consecutivas de um mesmo programa,
+
+7
+00:00:30,940 --> 00:00:33,320
+de um mesmo método, de uma mesma classe.
+
+8
+00:00:33,320 --> 00:00:39,760
+Mas muitas vezes essas mudanças feitas individualmente por essas pessoas, apesar de serem conflitantes,
+
+9
+00:00:39,760 --> 00:00:46,380
+não são detectadas por essas ferramentas, que infelizmente são limitadas e passam batidas
+
+10
+00:00:46,380 --> 00:00:52,420
+e integram as contribuições de forma equivocada, o que eventualmente leva a uma falha do sistema
+
+11
+00:00:52,420 --> 00:00:57,420
+quando ele estiver sendo usado por seus usuários, trazendo consequências negativas para muita
+
+12
+00:00:57,420 --> 00:00:58,360
+gente.
+
+13
+00:00:58,360 --> 00:01:00,540
+Muitas vezes consequências sérias.
+
+14
+00:01:00,540 --> 00:01:05,860
+Para evitar essas limitações dessas ferramentas atuais de integração de código, nós no SIM,
+
+15
+00:01:05,860 --> 00:01:11,660
+no SPG, em colaboração com pesquisadores aqui de CM1 nos Estados Unidos, pesquisamos
+
+16
+00:01:11,660 --> 00:01:17,560
+e desenvolvemos ferramentas complementares que podem ser acopladas ao Git para detectar esses
+
+17
+00:01:17,560 --> 00:01:22,560
+maiores problemas, esses conflitos e assim evitar que eles cheguem aos usuários finais.
+
+18
+00:01:22,560 --> 00:01:27,200
+A gente faz isso usando uma combinação de técnicas de análise estática e dinâmica
+
+19
+00:01:27,200 --> 00:01:32,620
+de código, que assim conseguem detectar os chamados conflitos semânticos, que são justamente
+
+20
+00:01:32,620 --> 00:01:38,040
+causados quando pessoas diferentes de uma mesma equipe alteram partes diferentes do código,
+
+21
+00:01:38,040 --> 00:01:43,560
+mas essas partes são dependentes e precisam ser ajustadas antes de serem integradas.
+
+22
+00:01:43,560 --> 00:01:47,560
+Só que as pessoas individualmente não têm conhecimento disso.
+
+23
+00:01:47,560 --> 00:01:53,200
+As nossas ferramentas vão justamente nessa direção de sinalizar a necessidade desses
+
+24
+00:01:53,200 --> 00:02:00,200
+ajustes adicionais, para que o defeito possa ser antecipado e a falha do sistema evitada.
+
+25
+00:02:00,200 --> 00:02:05,280
+Isso é especialmente importante porque esse tipo de defeito, causado pela interferência
+
+26
+00:02:05,280 --> 00:02:11,200
+entre mudanças feitas por duas pessoas, é muito mais difícil de ser detectado e corrigido
+
+27
+00:02:11,200 --> 00:02:15,420
+do que os defeitos que são individualmente causados por apenas uma pessoa.
+
+28
+00:02:15,420 --> 00:02:24,520
+O que é o processo de defesa?
+
+29
+00:02:24,520 --> 00:02:29,180
+O que é o processo de defesa?
+

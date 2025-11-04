@@ -1,0 +1,1116 @@
+1
+00:00:00,000 --> 00:00:07,000
+Ok, começando a entrevista de Camila Ingrid. Primeira questão, o aplicativo foi fácil de utilizar.
+
+2
+00:00:07,000 --> 00:00:10,000
+O quanto você concorda com essa afirmação, de 1 a 5?
+
+3
+00:00:10,000 --> 00:00:11,000
+Acho que 5.
+
+4
+00:00:11,000 --> 00:00:12,000
+Perfeito.
+
+5
+00:00:21,000 --> 00:00:24,000
+Teve alguma coisa no aplicativo que você achou mais difícil?
+
+6
+00:00:24,000 --> 00:00:28,000
+Tudo isso que foi bom, né? Mas teria alguma coisa que você acha que poderia melhorar?
+
+7
+00:00:28,000 --> 00:00:31,000
+A questão das fotos, que a gente viu naquele dia.
+
+8
+00:00:31,000 --> 00:00:37,000
+Que para tirar foto com o aplicativo, eu sinto que a qualidade fica inferior e demora mais a tirar.
+
+9
+00:00:37,000 --> 00:00:39,000
+Sim, do que fazendo upload, né?
+
+10
+00:00:39,000 --> 00:00:44,000
+Isso, do que fazendo upload. Por isso que eu sempre prefiro fazer o upload, porque eu melhoro bastante a qualidade.
+
+11
+00:00:44,000 --> 00:00:46,000
+Ok, excelente.
+
+12
+00:00:47,000 --> 00:00:50,000
+Foi fácil aprender a utilizar o aplicativo.
+
+13
+00:00:50,000 --> 00:00:54,000
+O quanto você concorda com essa afirmação, de 1 a 5?
+
+14
+00:00:54,000 --> 00:00:55,000
+5.
+
+15
+00:00:55,000 --> 00:00:56,000
+Ok.
+
+16
+00:00:58,000 --> 00:01:08,000
+As informações no app estavam organizadas. Você conseguiu encontrar com facilidade informações necessárias.
+
+17
+00:01:08,000 --> 00:01:11,000
+O quanto você concorda com essa afirmação?
+
+18
+00:01:11,000 --> 00:01:13,000
+3.
+
+19
+00:01:13,000 --> 00:01:14,000
+3, né?
+
+20
+00:01:14,000 --> 00:01:15,000
+Uhum.
+
+21
+00:01:15,000 --> 00:01:19,000
+Ok, o que você acha que poderia melhorar nesse sentido?
+
+22
+00:01:19,000 --> 00:01:25,000
+Acho que a questão da localização corporal, né? Eu não sei se é tanto um intuito, mas é porque a gente fica tão preso na cabeça, né?
+
+23
+00:01:25,000 --> 00:01:27,000
+E realmente ajuda muito a se localizar.
+
+24
+00:01:27,000 --> 00:01:34,000
+Aí adiciona mais detalhes e pontos-chave do câncer de pele, né? De localização.
+
+25
+00:01:34,000 --> 00:01:40,000
+E aquela questão de quando aparecem os diagnósticos, a lista, que parecia ser replicável, né?
+
+26
+00:01:40,000 --> 00:01:45,000
+E também que a IA era ainda, né, Luiz? Era bastante.
+
+27
+00:01:45,000 --> 00:01:47,000
+É, isso, isso.
+
+28
+00:01:47,000 --> 00:01:52,000
+Ok, massa. Você se sentiu confortável em utilizar o aplicativo em ambientes sociais?
+
+29
+00:01:53,000 --> 00:01:55,000
+De um a cinco?
+
+30
+00:01:55,000 --> 00:01:56,000
+De um a cinco, isso.
+
+31
+00:01:56,000 --> 00:01:57,000
+Cinco.
+
+32
+00:01:57,000 --> 00:01:58,000
+Cinco, ok.
+
+33
+00:02:09,000 --> 00:02:16,000
+O tempo total necessário para utilizar o app, desde a captura até a classificação, foi adequado para você? De um a cinco?
+
+34
+00:02:16,000 --> 00:02:18,000
+Um quatro.
+
+35
+00:02:18,000 --> 00:02:19,000
+Quatro, né?
+
+36
+00:02:19,000 --> 00:02:20,000
+Uhum.
+
+37
+00:02:22,000 --> 00:02:26,000
+A parte que você acha mais lenta seria qual? Que podia melhorar nesse sentido?
+
+38
+00:02:26,000 --> 00:02:32,000
+Acho que a parte da foto, né, em si, porque eu estou levando consideração tirando nele.
+
+39
+00:02:32,000 --> 00:02:39,000
+Mas aí que demorava um pouquinho. E as etapas depois do diagnóstico, confirmando o diagnóstico.
+
+40
+00:02:39,000 --> 00:02:43,000
+Se bem que o outro tem aquilo de que acho que a gente ficou mais acostumado com o outro.
+
+41
+00:02:43,000 --> 00:02:44,000
+Sim.
+
+42
+00:02:44,000 --> 00:02:49,000
+Nisso, de colocar o frontuário do paciente, entrar o fototipo e já ir direto, né?
+
+43
+00:02:49,000 --> 00:02:50,000
+Sim.
+
+44
+00:02:50,000 --> 00:02:56,000
+Eu gostei bastante do design dele, mas tinha isso, da demora inicial. Não sei porque a gente estava mais acostumado com o outro, né?
+
+45
+00:02:56,000 --> 00:02:57,000
+Uhum.
+
+46
+00:02:57,000 --> 00:02:58,000
+Então varia início.
+
+47
+00:02:58,000 --> 00:02:59,000
+Ok, Márcia, valeu.
+
+48
+00:03:09,000 --> 00:03:14,000
+O tempo necessário para o app retornar a resposta à classificação foi adequado para você?
+
+49
+00:03:14,000 --> 00:03:18,000
+Isso seria o tempo que ele ficar carregando depois de você mandar a imagem até ele te dar um resultado?
+
+50
+00:03:18,000 --> 00:03:19,000
+Só sobre o tempo, né?
+
+51
+00:03:19,000 --> 00:03:20,000
+É, só sobre o tempo.
+
+52
+00:03:20,000 --> 00:03:22,000
+Ah, então é um 5. É bem rápido.
+
+53
+00:03:22,000 --> 00:03:23,000
+Certo.
+
+54
+00:03:26,000 --> 00:03:31,000
+O tempo necessário para o app fazer o upload nas suas capturas foi adequado para você?
+
+55
+00:03:31,000 --> 00:03:35,000
+O upload é quando você tira a foto que a câmera do telefone envia. Tu acha que o tempo de envio foi adequado?
+
+56
+00:03:35,000 --> 00:03:38,000
+Acho que o 4, porque teve umas vezes que demorou.
+
+57
+00:03:38,000 --> 00:03:39,000
+Ah, sim, ok.
+
+58
+00:03:39,000 --> 00:03:43,000
+Mas nas últimas coletas não. Não demorou tanto.
+
+59
+00:03:43,000 --> 00:03:44,000
+Perfeito.
+
+60
+00:03:45,000 --> 00:03:49,000
+Você usaria o app novamente? Aplicaria no seu dia a dia?
+
+61
+00:03:49,000 --> 00:03:50,000
+Sim.
+
+62
+00:03:50,000 --> 00:03:52,000
+De 1 a 5?
+
+63
+00:03:52,000 --> 00:03:53,000
+5.
+
+64
+00:03:53,000 --> 00:03:54,000
+5, perfeito.
+
+65
+00:03:59,000 --> 00:04:02,000
+Você gostou da interface dos elementos visuais?
+
+66
+00:04:02,000 --> 00:04:03,000
+De 1 a 5.
+
+67
+00:04:03,000 --> 00:04:04,000
+5.
+
+68
+00:04:04,000 --> 00:04:05,000
+5.
+
+69
+00:04:05,000 --> 00:04:06,000
+Toda ação de 1 a 5.
+
+70
+00:04:06,000 --> 00:04:07,000
+Uhum.
+
+71
+00:04:10,000 --> 00:04:13,000
+Você ficou satisfeita com a utilização do app?
+
+72
+00:04:13,000 --> 00:04:14,000
+4.
+
+73
+00:04:14,000 --> 00:04:15,000
+4, ok.
+
+74
+00:04:17,000 --> 00:04:19,000
+Acho que você já falou as coisas que puderam melhorar, né?
+
+75
+00:04:19,000 --> 00:04:20,000
+Já.
+
+76
+00:04:23,000 --> 00:04:30,000
+Sempre que você cometia um erro, exemplo de anotação, preenchimento, você conseguiu corrigir facilmente no app?
+
+77
+00:04:31,000 --> 00:04:32,000
+De 1 a 5.
+
+78
+00:04:32,000 --> 00:04:33,000
+De 1 a 5.
+
+79
+00:04:33,000 --> 00:04:34,000
+5.
+
+80
+00:04:34,000 --> 00:04:48,000
+O app provê de forma aceitável uma estrutura para ser usada nos serviços de saúde.
+
+81
+00:04:48,000 --> 00:04:49,000
+De 1 a 5.
+
+82
+00:04:49,000 --> 00:04:51,000
+Acho que é o 4.
+
+83
+00:04:51,000 --> 00:04:52,000
+4, né?
+
+84
+00:04:52,000 --> 00:04:54,000
+Seria por causa dos problemas que você falou anteriormente?
+
+85
+00:04:54,000 --> 00:04:56,000
+É, acho que da localização corporal.
+
+86
+00:04:56,000 --> 00:04:58,000
+Poderia dar uma ajudada.
+
+87
+00:04:58,000 --> 00:05:01,000
+Que varia muito, né? Principalmente em câncer de pele.
+
+88
+00:05:01,000 --> 00:05:02,000
+Sim.
+
+89
+00:05:02,000 --> 00:05:03,000
+E é isso.
+
+90
+00:05:03,000 --> 00:05:05,000
+Eu estava com outra coisa na cabeça, mas esqueci.
+
+91
+00:05:07,000 --> 00:05:08,000
+Tudo bem.
+
+92
+00:05:08,000 --> 00:05:14,000
+O app reconheceu e deu todas as informações necessárias para você progredir com todas as ações necessárias.
+
+93
+00:05:15,000 --> 00:05:16,000
+De 1 a 5.
+
+94
+00:05:16,000 --> 00:05:17,000
+5.
+
+95
+00:05:17,000 --> 00:05:18,000
+5.
+
+96
+00:05:18,000 --> 00:05:21,000
+Não seria o 4 por causa das partes do corpo?
+
+97
+00:05:22,000 --> 00:05:27,000
+Não, é porque eu tinha entendido que ele dando a instruçãozinha de seguir em frente, aí ele dava certo.
+
+98
+00:05:27,000 --> 00:05:28,000
+Ok.
+
+99
+00:05:29,000 --> 00:05:33,000
+Eu acho que a tua ideia foi a mais sentido do que a pergunta.
+
+100
+00:05:33,000 --> 00:05:34,000
+Eu não escrevi todas.
+
+101
+00:05:34,000 --> 00:05:35,000
+Desculpa.
+
+102
+00:05:35,000 --> 00:05:36,000
+É o 5.
+
+103
+00:05:38,000 --> 00:05:41,000
+A navegação foi consistente entre as telas.
+
+104
+00:05:42,000 --> 00:05:43,000
+Um 3.
+
+105
+00:05:43,000 --> 00:05:44,000
+3.
+
+106
+00:05:44,000 --> 00:05:46,000
+Que eu dei alguns problemas mesmo.
+
+107
+00:05:46,000 --> 00:05:48,000
+É, quais seriam mesmo os problemas?
+
+108
+00:05:49,000 --> 00:05:54,000
+Que eu acho que foi mais daquele dia que você foi lá ver.
+
+109
+00:05:54,000 --> 00:05:56,000
+Ficava rodando.
+
+110
+00:05:56,000 --> 00:05:57,000
+Não sei se era internet também.
+
+111
+00:05:57,000 --> 00:05:58,000
+Ah, sim.
+
+112
+00:05:58,000 --> 00:06:03,000
+Mas teve umas travadas assim, realmente que o app dava...
+
+113
+00:06:03,000 --> 00:06:06,000
+É, tipo navegação seria a sequência de tela, sabe?
+
+114
+00:06:06,000 --> 00:06:08,000
+Tipo você ir da primeira para a segunda tela.
+
+115
+00:06:08,000 --> 00:06:09,000
+Ah, é isso.
+
+116
+00:06:09,000 --> 00:06:10,000
+Tocha aqui se fazia sentido.
+
+117
+00:06:10,000 --> 00:06:11,000
+Não, sim, sim.
+
+118
+00:06:11,000 --> 00:06:12,000
+Um 5.
+
+119
+00:06:12,000 --> 00:06:13,000
+Um 5, ok.
+
+120
+00:06:16,000 --> 00:06:20,000
+A interface possibilitou o uso de todas as funções disponíveis sem nenhum problema.
+
+121
+00:06:21,000 --> 00:06:22,000
+Um 4.
+
+122
+00:06:22,000 --> 00:06:23,000
+Um 4, né?
+
+123
+00:06:23,000 --> 00:06:25,000
+Qual seria o problema específico nessa...
+
+124
+00:06:25,000 --> 00:06:27,000
+Tipo, a espaço do corpo ou alguma outra coisa?
+
+125
+00:06:27,000 --> 00:06:28,000
+Não, a...
+
+126
+00:06:30,000 --> 00:06:32,000
+Aquele ranking de diagnóstico.
+
+127
+00:06:32,000 --> 00:06:33,000
+Ah, sim, entendi.
+
+128
+00:06:33,000 --> 00:06:34,000
+Que dava atrapalhada na hora.
+
+129
+00:06:34,000 --> 00:06:35,000
+Aham.
+
+130
+00:06:36,000 --> 00:06:38,000
+Que parecia que era clicável, mas acho que mudou isso, né?
+
+131
+00:06:38,000 --> 00:06:40,000
+É, mudou, ele tá diferente agora.
+
+132
+00:06:41,000 --> 00:06:46,000
+O app tem toda a estrutura e capacidades que você espera de um app nesse contexto.
+
+133
+00:06:48,000 --> 00:06:49,000
+Acho que um 4.
+
+134
+00:06:49,000 --> 00:06:50,000
+Um 4, né?
+
+135
+00:06:50,000 --> 00:06:51,000
+Sim, o que eu ia falar era que eu sinto...
+
+136
+00:06:51,000 --> 00:06:57,000
+Para nós, como coleta mesmo, eu sinto que se tivesse a gente ter acesso...
+
+137
+00:06:57,000 --> 00:06:59,000
+Quantos coletos a gente teve nesse aplicativo também?
+
+138
+00:06:59,000 --> 00:07:00,000
+Porque no outro a gente tem, né?
+
+139
+00:07:00,000 --> 00:07:01,000
+Sim.
+
+140
+00:07:01,000 --> 00:07:02,000
+Acessão dos coletos passados.
+
+141
+00:07:02,000 --> 00:07:03,000
+Nesse jeito não tem.
+
+142
+00:07:03,000 --> 00:07:04,000
+Aham.
+
+143
+00:07:04,000 --> 00:07:05,000
+Ele some, né?
+
+144
+00:07:05,000 --> 00:07:06,000
+O que a gente coloca.
+
+145
+00:07:06,000 --> 00:07:07,000
+Sim.
+
+146
+00:07:07,000 --> 00:07:10,000
+Aí acaba que se a gente tiver um caso de ter que editar depois, sabe?
+
+147
+00:07:10,000 --> 00:07:14,000
+Então se lembrar de algo, não tem como editar mais.
+
+148
+00:07:14,000 --> 00:07:15,000
+Entendi.
+
+149
+00:07:15,000 --> 00:07:16,000
+No aplicativo tem uma listinha, né?
+
+150
+00:07:16,000 --> 00:07:17,000
+Que é o que a gente tem que editar depois.
+
+151
+00:07:17,000 --> 00:07:22,000
+A gente tem acesso às nossas coletas, nem esse outro não.
+
+152
+00:07:22,000 --> 00:07:23,000
+Ok, ok.
+
+153
+00:07:23,000 --> 00:07:24,000
+Valeu pelo feedback.
+
+154
+00:07:24,000 --> 00:07:27,000
+Nenhum erro aconteceu ou impossibilitou o uso do aplicativo?
+
+155
+00:07:27,000 --> 00:07:28,000
+Um 4.
+
+156
+00:07:28,000 --> 00:07:29,000
+Um 4, né?
+
+157
+00:07:29,000 --> 00:07:30,000
+Faz daquele mesmo ali.
+
+158
+00:07:30,000 --> 00:07:31,000
+Aham.
+
+159
+00:07:31,000 --> 00:07:34,000
+Já teve vezes que tu tentou usar e não conseguiu, por algum motivo, né?
+
+160
+00:07:34,000 --> 00:07:36,000
+Por ficar carregando infinitamente, né?
+
+161
+00:07:36,000 --> 00:07:38,000
+Mas isso na própria coleta.
+
+162
+00:07:38,000 --> 00:07:39,000
+Na própria coleta, né?
+
+163
+00:07:39,000 --> 00:07:40,000
+É.
+
+164
+00:07:40,000 --> 00:07:44,000
+Na própria coleta tu diz tipo, tira uma foto na câmera dele.
+
+165
+00:07:44,000 --> 00:07:45,000
+Na própria câmera dele.
+
+166
+00:07:45,000 --> 00:07:46,000
+Sim.
+
+167
+00:07:46,000 --> 00:07:50,000
+Ou então uma vez que aconteceu de mandar a foto pro upload e ficar lá carregando.
+
+168
+00:07:50,000 --> 00:07:51,000
+Aham.
+
+169
+00:07:51,000 --> 00:07:54,000
+Mas só foi uma vez mesmo, ele costuma ser bem rápido.
+
+170
+00:07:54,000 --> 00:07:55,000
+Certo.
+
+171
+00:07:55,000 --> 00:07:58,000
+Todos os erros foram rapidamente corrigidos ou amenizados.
+
+172
+00:07:58,000 --> 00:08:01,000
+Um 4, esse mesmo.
+
+173
+00:08:01,000 --> 00:08:06,000
+Um 4, né?
+
+174
+00:08:06,000 --> 00:08:09,000
+Ok.
+
+175
+00:08:09,000 --> 00:08:14,000
+Houve problemas com o view das imagens?
+
+176
+00:08:14,000 --> 00:08:15,000
+4.
+
+177
+00:08:15,000 --> 00:08:16,000
+4.
+
+178
+00:08:16,000 --> 00:08:17,000
+Ok.
+
+179
+00:08:17,000 --> 00:08:24,000
+Houve problemas de fechamento do app na execução?
+
+180
+00:08:24,000 --> 00:08:27,000
+Tipo, tu usava o aplicativo e ele fechava do nada.
+
+181
+00:08:27,000 --> 00:08:29,000
+Você não tinha uma explicação?
+
+182
+00:08:29,000 --> 00:08:30,000
+Não.
+
+183
+00:08:30,000 --> 00:08:31,000
+Então, como é que...
+
+184
+00:08:31,000 --> 00:08:32,000
+Então seria...
+
+185
+00:08:32,000 --> 00:08:33,000
+Seria 1?
+
+186
+00:08:33,000 --> 00:08:36,000
+O quanto você concorda com a explicação?
+
+187
+00:08:36,000 --> 00:08:37,000
+1.
+
+188
+00:08:37,000 --> 00:08:38,000
+1.
+
+189
+00:08:38,000 --> 00:08:39,000
+1.
+
+190
+00:08:39,000 --> 00:08:40,000
+1.
+
+191
+00:08:40,000 --> 00:08:41,000
+1.
+
+192
+00:08:41,000 --> 00:08:42,000
+1.
+
+193
+00:08:42,000 --> 00:08:43,000
+1.
+
+194
+00:08:43,000 --> 00:08:44,000
+1.
+
+195
+00:08:44,000 --> 00:08:45,000
+1.
+
+196
+00:08:45,000 --> 00:08:46,000
+1.
+
+197
+00:08:46,000 --> 00:08:48,000
+O quanto você concorda com essa afirmação?
+
+198
+00:08:48,000 --> 00:08:49,000
+1.
+
+199
+00:08:49,000 --> 00:08:50,000
+1.
+
+200
+00:08:50,000 --> 00:08:51,000
+1.
+
+201
+00:08:51,000 --> 00:09:04,000
+Então, voltando na questão anterior, eu te perguntei se houve problemas com o view da
+
+202
+00:09:04,000 --> 00:09:05,000
+imagem.
+
+203
+00:09:05,000 --> 00:09:06,000
+Aí, tu...
+
+204
+00:09:06,000 --> 00:09:09,000
+Não teve problema ou teve problema?
+
+205
+00:09:09,000 --> 00:09:11,000
+Teve, porque eu coloquei 4, né?
+
+206
+00:09:11,000 --> 00:09:12,000
+É, tu colocou 4.
+
+207
+00:09:12,000 --> 00:09:14,000
+É, que teve só aquela vez mesmo que eu falei.
+
+208
+00:09:14,000 --> 00:09:15,000
+Ah, certo.
+
+209
+00:09:15,000 --> 00:09:20,000
+Então, houve problemas com o foco na imagem?
+
+210
+00:09:20,000 --> 00:09:23,000
+Tu diz que concorda ou concorda?
+
+211
+00:09:23,000 --> 00:09:24,000
+Concorda.
+
+212
+00:09:24,000 --> 00:09:25,000
+Então, 5, né?
+
+213
+00:09:25,000 --> 00:09:26,000
+Concorda, né?
+
+214
+00:09:26,000 --> 00:09:27,000
+Isso.
+
+215
+00:09:27,000 --> 00:09:29,000
+O foco na imagem, tu diz, da própria câmera.
+
+216
+00:09:29,000 --> 00:09:30,000
+Isso, isso.
+
+217
+00:09:30,000 --> 00:09:31,000
+Foi o maior problema.
+
+218
+00:09:31,000 --> 00:09:33,000
+Mas tu acha que foi uma coisa muito frequente?
+
+219
+00:09:33,000 --> 00:09:36,000
+Se foi uma coisa menos frequente, tu pode falar 3 ou 4.
+
+220
+00:09:36,000 --> 00:09:38,000
+Se foi uma coisa muito frequente, põe 5.
+
+221
+00:09:38,000 --> 00:09:39,000
+Não...
+
+222
+00:09:39,000 --> 00:09:41,000
+É, muito frequente, é assim?
+
+223
+00:09:41,000 --> 00:09:42,000
+Muito frequente, né?
+
+224
+00:09:42,000 --> 00:09:43,000
+Ele recusa, é.
+
+225
+00:09:43,000 --> 00:09:44,000
+Tá, beleza.
+
+226
+00:09:45,000 --> 00:09:48,000
+A gente fez uma autorização pra meio que desativar isso de você...
+
+227
+00:09:48,000 --> 00:09:49,000
+De fazer...
+
+228
+00:09:49,000 --> 00:09:50,000
+De ter...
+
+229
+00:09:50,000 --> 00:09:51,000
+De ele chacar o foco, sabe?
+
+230
+00:09:51,000 --> 00:09:52,000
+Uhum.
+
+231
+00:09:52,000 --> 00:09:53,000
+Talvez eu não tenha usado ela ainda.
+
+232
+00:09:53,000 --> 00:09:54,000
+Aham.
+
+233
+00:09:54,000 --> 00:09:57,000
+Mas, enfim, é com base na sua experiência até agora, então tudo certo.
+
+234
+00:09:59,000 --> 00:10:03,000
+Utilizar o app foi coviniente para acelerar algum processo.
+
+235
+00:10:03,000 --> 00:10:06,000
+Quanto você concorda com essa afirmação?
+
+236
+00:10:07,000 --> 00:10:08,000
+5.
+
+237
+00:10:08,000 --> 00:10:09,000
+5, né?
+
+238
+00:10:09,000 --> 00:10:10,000
+5.
+
+239
+00:10:12,000 --> 00:10:15,000
+É porque não ter o prontuário do paciente às vezes facilita pra gente, sabe?
+
+240
+00:10:15,000 --> 00:10:18,000
+Porque a gente consegue pegar os pacientes naquele corredor...
+
+241
+00:10:18,000 --> 00:10:19,000
+Aham.
+
+242
+00:10:19,000 --> 00:10:21,000
+Sem ficar pedindo o prontuário.
+
+243
+00:10:21,000 --> 00:10:22,000
+Certo.
+
+244
+00:10:22,000 --> 00:10:24,000
+Então ajuda na coleta.
+
+245
+00:10:24,000 --> 00:10:25,000
+Ok.
+
+246
+00:10:26,000 --> 00:10:31,000
+Utilizar o app foi coviniente para tirar alguma dúvida.
+
+247
+00:10:31,000 --> 00:10:34,000
+Quanto você concorda com essa afirmação?
+
+248
+00:10:35,000 --> 00:10:36,000
+3.
+
+249
+00:10:36,000 --> 00:10:37,000
+3, né?
+
+250
+00:10:39,000 --> 00:10:48,160
+Você falou isso com base na qualidade da resposta que ele dá?
+
+251
+00:10:48,160 --> 00:10:51,880
+Você se deu confiante com as respostas dadas pelo app?
+
+252
+00:10:51,880 --> 00:10:52,880
+Dois.
+
+253
+00:10:52,880 --> 00:10:53,880
+Dois, né?
+
+254
+00:10:53,880 --> 00:11:01,720
+Eu sinto que ele tava acertando mais nessas últimas coletas que eu fiz, mas no começo
+
+255
+00:11:01,720 --> 00:11:02,720
+era bem errado.
+
+256
+00:11:02,720 --> 00:11:03,720
+Isso.
+
+257
+00:11:03,720 --> 00:11:06,720
+Estamos tentando melhorar, né?
+
+258
+00:11:06,720 --> 00:11:07,720
+Pois é.
+
+259
+00:11:08,000 --> 00:11:11,880
+Com base nas respostas do app, você utilizaria ele na prática?
+
+260
+00:11:11,880 --> 00:11:12,880
+Cinco.
+
+261
+00:11:12,880 --> 00:11:13,880
+Cinco, ok.
+
+262
+00:11:18,880 --> 00:11:23,480
+Você utilizaria o app na prática se alguma parte fosse melhorada?
+
+263
+00:11:23,480 --> 00:11:24,480
+Cinco.
+
+264
+00:11:24,480 --> 00:11:25,480
+Cinco.
+
+265
+00:11:32,480 --> 00:11:37,000
+Você se sentiu confortável com o uso do app e as respostas recebidas?
+
+266
+00:11:37,080 --> 00:11:38,080
+Três.
+
+267
+00:11:38,080 --> 00:11:39,080
+Três, né?
+
+268
+00:11:39,080 --> 00:11:40,080
+Ok.
+
+269
+00:11:44,080 --> 00:11:48,280
+Você se sentiu confortável em validar as respostas e como elas foram armazenadas no
+
+270
+00:11:48,280 --> 00:11:49,280
+app?
+
+271
+00:11:49,280 --> 00:11:51,280
+É aquela parte de você dar seu feedback?
+
+272
+00:11:51,280 --> 00:11:52,280
+De você dizer...
+
+273
+00:11:52,280 --> 00:11:53,280
+Cinco.
+
+274
+00:11:53,280 --> 00:11:54,280
+Cinco, né?
+
+275
+00:11:58,280 --> 00:11:59,280
+Pronto.
+
+276
+00:11:59,280 --> 00:12:01,280
+É... então é isso.
+
+277
+00:12:01,280 --> 00:12:02,280
+Terminamos.
+
+278
+00:12:02,280 --> 00:12:03,280
+28 perguntas.
+
+279
+00:12:03,280 --> 00:12:04,280
+Vou pausar aqui.
+

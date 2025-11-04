@@ -1,0 +1,972 @@
+1
+00:00:00,000 --> 00:00:06,260
+Olá, seja muito bem-vindos a mais uma aula com o seu linguagem de programação específica
+
+2
+00:00:06,260 --> 00:00:12,180
+para ir a hoje e demos esforar mais alguns conceitos de scheduling.
+
+3
+00:00:12,180 --> 00:00:18,120
+Caso com sete viores será o Onroll, ele, como a gente viu naquele exemplo,
+
+4
+00:00:18,120 --> 00:00:24,000
+da data com a geração de uma geração de uma geração de fibrunátil, pode ser utilizado
+
+5
+00:00:24,000 --> 00:00:30,120
+para diminuir o número de terações, a costa do tamanho do corpo do loop,
+
+6
+00:00:30,120 --> 00:00:34,960
+então nós vamos aumentar o corpo do loop, a fina de número de gerações.
+
+7
+00:00:34,960 --> 00:00:43,080
+A gente pode ver que ele tem um efeito de como se esse que está assistido multiplais
+
+8
+00:00:43,080 --> 00:00:49,040
+de terações em o que seria uma só no loop transformado.
+
+9
+00:00:50,040 --> 00:00:54,320
+Ele pode ser útil para quando a gente tem piquem seu estuimo manipulando dados em comuns,
+
+10
+00:00:54,320 --> 00:00:59,480
+e um padrão específico que a gente vai refracar com o limite.
+
+11
+00:00:59,480 --> 00:01:04,280
+Às vezes é útil de realizar o Onroll, é quando a gente tem mais de um canal
+
+12
+00:01:04,280 --> 00:01:08,960
+e que é se pretecer para botar o assigne desses canais, certo?
+
+13
+00:01:08,960 --> 00:01:14,480
+Em sequência, então, um atrageiro outro, sem uma criação de novo loop.
+
+14
+00:01:14,640 --> 00:01:21,720
+Ele tem duas sintaxis, a primeira delas, é só passando um avar para a introdução de um rol,
+
+15
+00:01:21,720 --> 00:01:24,840
+e a outra avar em um fator.
+
+16
+00:01:24,840 --> 00:01:27,840
+Ele vai ser utilizado com um bão de ou com o split.
+
+17
+00:01:27,840 --> 00:01:35,680
+No caso, quando a gente quer fazer um rol, por exemplo, de um avar que não seja os canais,
+
+18
+00:01:35,680 --> 00:01:40,240
+acho que não é uma vez que precisar fazer um split dessa avar, certo?
+
+19
+00:01:40,240 --> 00:01:44,560
+E a gente faz o split com um fator, e depois aplicamos um rol nessa avar,
+
+20
+00:01:44,560 --> 00:01:51,200
+que vai estar ali bem enternando no alinhamento do loop, certo?
+
+21
+00:01:51,200 --> 00:01:56,040
+Uma outra opção é você se pedir fazer essa sintaxe aqui em rol,
+
+22
+00:01:56,040 --> 00:01:58,800
+passando o var e depois o fator.
+
+23
+00:01:58,800 --> 00:02:05,280
+A diferença que você vai ficar, vai ficar escondido,
+
+24
+00:02:05,280 --> 00:02:06,520
+o split, certo?
+
+25
+00:02:06,520 --> 00:02:10,160
+Ele vai esconder esses split.
+
+26
+00:02:10,160 --> 00:02:14,640
+Para o exemplo dos canais, a gente vai utilizar um dos bão de aqui.
+
+27
+00:02:14,640 --> 00:02:19,320
+Então, nós vamos, na verdade, utilizar tanto o riordar como bão de,
+
+28
+00:02:19,320 --> 00:02:25,520
+para mover os canais, para a parte mais interna do loop, certo?
+
+29
+00:02:25,520 --> 00:02:32,800
+O bão de, ele vai dizer por relâgue, que a minha variável do canal é limitada entre 0 a 3, certo?
+
+30
+00:02:32,800 --> 00:02:38,200
+Então, ele é RGB, sempre que vai trabalhar em relâio, com o mínimo e o existente,
+
+31
+00:02:38,200 --> 00:02:42,520
+é que é o... a extensão daquela limissão.
+
+32
+00:02:42,520 --> 00:02:45,520
+Então, a gente vai passar para o bão de a variável,
+
+33
+00:02:45,520 --> 00:02:51,560
+o mínimo que vai ser 0 e o existente, que vai ser 3, aqui são 3 canais.
+
+34
+00:02:51,560 --> 00:02:55,800
+E a partir disso, diferente de uma gente das taxas de como split,
+
+35
+00:02:55,800 --> 00:03:00,000
+a gente sabe os limites que esse loop para a percorrer,
+
+36
+00:03:00,000 --> 00:03:02,440
+a gente sabe como os limites da minha variável.
+
+37
+00:03:02,440 --> 00:03:08,160
+Então, a gente tem o utilizado bão de, para passar essa informação para um rol depois.
+
+38
+00:03:08,160 --> 00:03:11,680
+No caso, onde a gente não sabe a dimensão do loop,
+
+39
+00:03:11,680 --> 00:03:16,520
+que vai ser, no caso, a gente tem uma variável, que não seja aquela descanagem, por exemplo,
+
+40
+00:03:16,520 --> 00:03:22,600
+a gente vai ter, tal utilizando essa sentarque, com o split.
+
+41
+00:03:22,600 --> 00:03:26,720
+Eremos agora, ele ficar na prática, a utilização do rol.
+
+42
+00:03:26,720 --> 00:03:31,400
+Eu tenho aqui um exemplo, onde eu to aplicando um efeito sépino a imagem,
+
+43
+00:03:31,400 --> 00:03:38,120
+certo? Então, nós temos... um efeito de falta antiga, sendo aplicado.
+
+44
+00:03:38,560 --> 00:03:42,760
+Primeiramente, mostrando o protótipo e Python para a gente ter um guia.
+
+45
+00:03:42,760 --> 00:03:48,200
+Da atualização, certo? Do runtime, nesse papel, ainda.
+
+46
+00:03:48,200 --> 00:03:51,200
+Eu vou rodar o protótipo aqui.
+
+47
+00:03:58,560 --> 00:04:03,400
+E nós temos em Python.
+
+48
+00:04:03,480 --> 00:04:10,360
+A velocidade é de 20, em casa, ele está demorando 23 mil segundos, no caso 24,
+
+49
+00:04:10,360 --> 00:04:15,040
+mil segundos para compadrar a exceção da pachloria na média.
+
+50
+00:04:15,040 --> 00:04:20,760
+No pior caso, está em 46 mil segundos e, no melhor caso, 20 mil segundos.
+
+51
+00:04:20,760 --> 00:04:23,760
+Agora, pela Inelés Sintas, ela só envolve.
+
+52
+00:04:23,760 --> 00:04:28,920
+Vou explicar os canais da imagem por diversos fatores, certo?
+
+53
+00:04:29,000 --> 00:04:31,480
+Cada canal novo, ele vai ter...
+
+54
+00:04:31,480 --> 00:04:35,840
+Constitutre esfatorias associador a ele, certo? Então, cada no-ocana,
+
+55
+00:04:35,840 --> 00:04:41,200
+o da mim mágica, o novo a gente a ele, é uma ponderação dos RGB anteriores,
+
+56
+00:04:41,200 --> 00:04:43,520
+né, NIsseites.
+
+57
+00:04:43,520 --> 00:04:47,160
+Após isso, eu faço o margines de canais,
+
+58
+00:04:47,160 --> 00:04:51,800
+com o verde para a e o em que ele é a versão clipeada dele,
+
+59
+00:04:51,800 --> 00:04:53,560
+ou seja, mantido a 23 mil segundos.
+
+60
+00:04:53,560 --> 00:04:58,840
+E assim, eu tenho aqui também um protótipo.
+
+61
+00:04:58,840 --> 00:05:04,320
+A gente também está adicê mais mais com o PCV.
+
+62
+00:05:04,320 --> 00:05:09,280
+Então, ela nossa segunda referência de tempo,
+
+63
+00:05:09,280 --> 00:05:17,520
+e nós esperamos, né, um tempo pouco, menor de execução em relação ao Python.
+
+64
+00:05:28,840 --> 00:05:40,120
+Já eu não tenho mais aqui, né, ao restado do PCV, né, está igualzinho ao do Python.
+
+65
+00:05:40,120 --> 00:05:42,920
+E, no caso, a gente tem que...
+
+66
+00:05:42,920 --> 00:05:45,400
+A...
+
+67
+00:05:45,400 --> 00:05:48,840
+0,3 mil segundos na média, certo?
+
+68
+00:05:48,840 --> 00:05:54,440
+Incorporação ao Python, a conselho de 23 mil segundos.
+
+69
+00:05:54,440 --> 00:05:58,280
+No maior caso, tem 0,1,9 mil segundos,
+
+70
+00:05:58,280 --> 00:06:00,840
+e no pior caso, 4 mil segundos.
+
+71
+00:06:00,840 --> 00:06:04,600
+Certo, então, é bem mais rápido que o Python.
+
+72
+00:06:04,600 --> 00:06:11,840
+Vamos então ver se a gente consegue chegar mais rápido com o relâio.
+
+73
+00:06:11,840 --> 00:06:15,280
+Então, eu não tenho aqui para que vai me implementar no...
+
+74
+00:06:15,280 --> 00:06:17,160
+No relâio de com o Generator,
+
+75
+00:06:17,160 --> 00:06:20,200
+e com um parão de IP, selecionar o...
+
+76
+00:06:20,200 --> 00:06:21,280
+buscar o...
+
+77
+00:06:21,280 --> 00:06:25,680
+...que são me salvo, certo?
+
+78
+00:06:25,680 --> 00:06:28,720
+E aí, o que a gente tem aqui é...
+
+79
+00:06:28,720 --> 00:06:31,880
+esse MOOC,
+
+80
+00:06:31,880 --> 00:06:34,680
+e aí, no caso, a gente vai poder obiser, vai...
+
+81
+00:06:34,680 --> 00:06:35,800
+...a...
+
+82
+00:06:35,800 --> 00:06:37,840
+Uma das maiores utilidades do...
+
+83
+00:06:37,840 --> 00:06:44,000
+...on roll, que é a eliminação do selecte para fazer esse assaiado dos canais.
+
+84
+00:06:44,000 --> 00:06:45,640
+Certo, então, vai ter um MOOC,
+
+85
+00:06:45,640 --> 00:06:47,960
+que se aqui a gente consegue converter...
+
+86
+00:06:47,960 --> 00:06:51,120
+...a vez ter...
+
+87
+00:06:51,120 --> 00:06:55,760
+...a essa multiplexação, a gente vai converter isso daqui para executar o assaiado,
+
+88
+00:06:55,760 --> 00:06:58,640
+e o independente do outro, dentro do...
+
+89
+00:06:58,640 --> 00:07:04,280
+...lupi mais interno da minha, da minha para que foi.
+
+90
+00:07:04,280 --> 00:07:07,920
+Então, eu tenho aqui, primeiro, a utilização,
+
+91
+00:07:07,920 --> 00:07:10,920
+com o parão da diz, uma pena se não aplicada no IP,
+
+92
+00:07:10,920 --> 00:07:13,320
+são um bichado da senhora.
+
+93
+00:07:13,400 --> 00:07:17,000
+Então, nós vamos ver de cá, ainda sem o on roll, certo?
+
+94
+00:07:17,000 --> 00:07:20,320
+Uma aplicação mais simples, e escarre-lo.
+
+95
+00:07:32,120 --> 00:07:33,360
+A vez que está isso aqui,
+
+96
+00:07:33,360 --> 00:07:36,280
+a gente obtém um código, também bem mais rápido que um pai,
+
+97
+00:07:36,280 --> 00:07:40,360
+que é o mais lento que...
+
+98
+00:07:40,440 --> 00:07:45,000
+...o IPC-verbe, inclusive, o melhor tempo dessa execução.
+
+99
+00:07:45,000 --> 00:07:47,360
+Em realite, é...
+
+100
+00:07:50,200 --> 00:07:54,440
+...tá-se em andar média em relação ao IPC-verbe, certo?
+
+101
+00:08:01,280 --> 00:08:03,880
+Acho que pode ser, então, agora, verificar...
+
+102
+00:08:03,880 --> 00:08:06,920
+o seto infio, que eu tenho, já que eu quero, aqui, eu só preciso...
+
+103
+00:08:06,920 --> 00:08:08,920
+...e é que arregar essa página.
+
+104
+00:08:09,240 --> 00:08:11,720
+Vamos deixar o assembly.
+
+105
+00:08:11,720 --> 00:08:16,960
+E verificar aqui, naquia, a gente tem esse moxo aqui dentro,
+
+106
+00:08:16,960 --> 00:08:19,720
+internamente, não...
+
+107
+00:08:20,920 --> 00:08:25,760
+A gente tem que o... o ele fom sendo ele que tá ali para o ela,
+
+108
+00:08:25,760 --> 00:08:29,160
+e dentro do nox, na parte mais interna, a gente tem...
+
+109
+00:08:29,160 --> 00:08:33,160
+...a... esse moxo aqui, certo?
+
+110
+00:08:39,920 --> 00:08:42,920
+Então, vamos remover esses motos.
+
+111
+00:08:42,920 --> 00:08:44,920
+Como a gente viu, meus idilais,
+
+112
+00:08:44,920 --> 00:08:46,920
+a gente tem que utilizar algumas diretivas junto
+
+113
+00:08:46,920 --> 00:08:51,920
+do meu... um row, para poder ter o comportamento que nós esperamos.
+
+114
+00:08:51,920 --> 00:08:54,920
+A primeira delas, como mencionada, é o Riorder.
+
+115
+00:08:54,920 --> 00:08:59,920
+Nós precisamos mover os canais para a parte mais interna do loop.
+
+116
+00:08:59,920 --> 00:09:02,920
+Seja a gente ter que garantir que eles teriam...
+
+117
+00:09:02,920 --> 00:09:05,920
+...na parte mais interna do aniamente do loop.
+
+118
+00:09:06,920 --> 00:09:09,920
+Seguem que é isso, utilizamos um bão de...
+
+119
+00:09:09,920 --> 00:09:14,920
+...para estabelecer os limites do... da minha var, que é o...
+
+120
+00:09:14,920 --> 00:09:15,920
+...o chanais.
+
+121
+00:09:15,920 --> 00:09:18,920
+E aí eu tenho o mínimo que é zero e...
+
+122
+00:09:18,920 --> 00:09:22,920
+...a extensão dessa minha dimensão, que vai ser o 3, então, nós tivemos de zero,
+
+123
+00:09:22,920 --> 00:09:25,920
+até 2, zero, com um e 2.
+
+124
+00:09:25,920 --> 00:09:29,920
+Seguem que é isso, nós executamos o row.
+
+125
+00:09:29,920 --> 00:09:33,920
+Eu posso remover isso aqui para que a gente veja...
+
+126
+00:09:33,920 --> 00:09:37,920
+...a gente pode ser o observado quando vocês tiveram utilizando...
+
+127
+00:09:37,920 --> 00:09:41,920
+...seis indetivas, certo?
+
+128
+00:09:41,920 --> 00:09:44,920
+Então, a rodar o caso 1...
+
+129
+00:09:50,920 --> 00:09:54,920
+A gente tem um pacto bem mais ente inclusive...
+
+130
+00:09:54,920 --> 00:09:59,920
+...e ao verificar a atualização aqui do...
+
+131
+00:09:59,920 --> 00:10:01,920
+...estetamento de File.
+
+132
+00:10:04,920 --> 00:10:07,920
+Vamos então um pouco.
+
+133
+00:10:11,920 --> 00:10:14,920
+Nós temos o seguinte...
+
+134
+00:10:14,920 --> 00:10:17,920
+...tram três versões aqui...
+
+135
+00:10:17,920 --> 00:10:20,920
+...do... da minha execução, certo?
+
+136
+00:10:20,920 --> 00:10:23,920
+Um pra cada um daquele escanais.
+
+137
+00:10:23,920 --> 00:10:31,920
+Então, é como se realmente vai se considerando o C, o canal, como o loop mais externo.
+
+138
+00:10:33,920 --> 00:10:42,920
+Então, eu vou fazer o que você está fazendo com o padrão...
+
+139
+00:10:42,920 --> 00:10:45,920
+...com essa nossa patula.
+
+140
+00:10:45,920 --> 00:10:49,920
+Eu vou recargar o meu jeito, então...
+
+141
+00:10:49,920 --> 00:10:52,920
+...eu vou fazer o que você está fazendo com o padrão...
+
+142
+00:10:52,920 --> 00:10:56,920
+...a gente vai fazer o que você está fazendo com o padrão...
+
+143
+00:10:56,920 --> 00:10:59,920
+...com essa nossa patula.
+
+144
+00:10:59,920 --> 00:11:07,920
+Eu vou recargar o meu jeito, então, eu vou fazer o que você está fazendo com o padrão...
+
+145
+00:11:07,920 --> 00:11:13,920
+...e como esperado o C, o canal está aqui no loop mais externo.
+
+146
+00:11:13,920 --> 00:11:15,920
+Então, ao fazer o 1-roll...
+
+147
+00:11:15,920 --> 00:11:19,920
+...a gente está balancei sexto em aqui...
+
+148
+00:11:19,920 --> 00:11:21,920
+...com um bão de certo...
+
+149
+00:11:21,920 --> 00:11:24,920
+...e ao fazer o 1-roll, sem o re-order.
+
+150
+00:11:24,920 --> 00:11:28,920
+Ele vai desenrola essa computação entre os loopes diferentes.
+
+151
+00:11:28,920 --> 00:11:32,920
+Então, 3-jígios por toda imagem diferente.
+
+152
+00:11:37,920 --> 00:11:39,920
+Vamos então re-movei...
+
+153
+00:11:40,920 --> 00:11:45,920
+...e passar a fazer o e-order de junto com as duas outras dietivas.
+
+154
+00:11:55,920 --> 00:12:02,920
+Eu tenho um pouco mais rápido que o nosso teste e lá inicial com...
+
+155
+00:12:02,920 --> 00:12:06,920
+...a aqueles 3-jígios, certo?
+
+156
+00:12:06,920 --> 00:12:09,920
+Mas ainda não estão rápido com o outro paralel...
+
+157
+00:12:09,920 --> 00:12:11,920
+...e também não com o rápido com o outro...
+
+158
+00:12:11,920 --> 00:12:13,920
+...o pensei ver.
+
+159
+00:12:13,920 --> 00:12:17,920
+Vamos então proceguir com o schedule em essa patula...
+
+160
+00:12:17,920 --> 00:12:20,920
+...mais antes passando para verificar...
+
+161
+00:12:21,920 --> 00:12:25,920
+...a nova estrutura obtida no schedule em File.
+
+162
+00:12:28,920 --> 00:12:32,920
+Então, nós temos aqui que temos o loop mais externo...
+
+163
+00:12:32,920 --> 00:12:36,920
+...em mais de outro ponto pelo e-pesso, depois pelo x...
+
+164
+00:12:36,920 --> 00:12:40,920
+...e as 3-jígios que estão sendo feito o assign e em sequência...
+
+165
+00:12:40,920 --> 00:12:41,920
+...o uma para o outro.
+
+166
+00:12:41,920 --> 00:12:53,920
+Vamos então passar para o caso 2, que é a aplicação do paralelismo...
+
+167
+00:12:53,920 --> 00:12:56,920
+...a pois esse amroo, certo?
+
+168
+00:12:56,920 --> 00:13:00,920
+O dessa forma com o e-order e o bão de...
+
+169
+00:13:01,920 --> 00:13:11,920
+...a chamamos agora um momento na velocidade...
+
+170
+00:13:11,920 --> 00:13:15,920
+...em comparação inclusive, a Oscar 00 aqui...
+
+171
+00:13:15,920 --> 00:13:21,920
+...a onde chegou a 0.29 milícigudos...
+
+172
+00:13:21,920 --> 00:13:25,920
+...com o opcv aqui, na média...
+
+173
+00:13:25,920 --> 00:13:28,920
+...ja, já tem gynô...valô menor, certo?
+
+174
+00:13:30,920 --> 00:13:33,920
+E inclusive o pior caso também...
+
+175
+00:13:33,920 --> 00:13:36,920
+...que é uma boa diferença.
+
+176
+00:13:36,920 --> 00:13:40,920
+Nós podemos prosseguir com...
+
+177
+00:13:40,920 --> 00:13:43,920
+...nós se schedule em fazer...
+
+178
+00:13:43,920 --> 00:13:48,920
+...a testando um split e executando paralelismo...
+
+179
+00:13:48,920 --> 00:13:50,920
+...a parte desse split e um e-pesso.
+
+180
+00:13:50,920 --> 00:13:52,920
+Ou certo, então, a inversa de paralelismo...
+
+181
+00:13:52,920 --> 00:13:54,920
+...avar e-pesso um puro...
+
+182
+00:13:54,920 --> 00:13:57,920
+...a gente vai fazer um e-pli-te nela antes de aplicar o paralelismo...
+
+183
+00:13:57,920 --> 00:13:59,920
+...e novamente como antes...
+
+184
+00:13:59,920 --> 00:14:01,920
+...eu estou utilizando vector size...
+
+185
+00:14:01,920 --> 00:14:03,920
+...a obtido com a função...
+
+186
+00:14:03,920 --> 00:14:06,920
+...nós o vector size do relâge...
+
+187
+00:14:06,920 --> 00:14:09,920
+...a como a dia para a minha experiência...
+
+188
+00:14:09,920 --> 00:14:11,920
+...creçam um valor que eu posso...
+
+189
+00:14:11,920 --> 00:14:13,920
+...rapear uma experimentar vários...
+
+190
+00:14:13,920 --> 00:14:15,920
+...a fatores dele...
+
+191
+00:14:15,920 --> 00:14:17,920
+...com um a guia, certo?
+
+192
+00:14:17,920 --> 00:14:19,920
+O caso aqui estou muito pequeno e por 8.
+
+193
+00:14:21,920 --> 00:14:25,920
+Então, nós vamos executar aqui o caso 3...
+
+194
+00:14:27,920 --> 00:14:33,920
+...e tem um pouco mais noito aqui...
+
+195
+00:14:33,920 --> 00:14:35,920
+...a versão do verio...
+
+196
+00:14:35,920 --> 00:14:39,920
+...e tem que experimentar também modificar...
+
+197
+00:14:39,920 --> 00:14:41,920
+...e se vai troçar...
+
+198
+00:14:41,920 --> 00:14:45,920
+...e tem que ver se a gente obtém...
+
+199
+00:14:45,920 --> 00:14:47,920
+...o tem um pouco melhor...
+
+200
+00:14:47,920 --> 00:14:51,920
+...e tem um pouco mais rápido...
+
+201
+00:14:51,920 --> 00:14:53,920
+...e tem um pouco mais rápido...
+
+202
+00:14:53,920 --> 00:14:55,920
+...e tem um pouco mais rápido...
+
+203
+00:14:55,920 --> 00:14:57,920
+...o de 2...
+
+204
+00:14:57,920 --> 00:14:59,920
+O áculos lecturemos usar o monitored cinema...
+
+205
+00:14:59,920 --> 00:15:01,920
+...de zucchero no d grandão melhor buscar o de 2...
+
+206
+00:15:01,920 --> 00:15:06,920
+...go para os ...veimiz quearemos...
+
+207
+00:15:06,920 --> 00:15:08,920
+...samofx usamos uma economists...
+
+208
+00:15:08,920 --> 00:15:09,920
+...tindo o queerei...
+
+209
+00:15:09,920 --> 00:15:13,920
+...epart trusting bordos...
+
+210
+00:15:13,920 --> 00:15:16,920
+...&eneramos um problema halves duetayd看看...
+
+211
+00:15:16,920 --> 00:15:18,920
+...o tails está zamos...
+
+212
+00:15:18,920 --> 00:15:20,920
+...de 3...
+
+213
+00:15:20,920 --> 00:15:21,920
+...nós mögliches"...
+
+214
+00:15:21,920 --> 00:15:22,920
+...eu estou לא�o dito fã...
+
+215
+00:15:22,920 --> 00:15:27,920
+E a planquão mais a virtualização avariava mais interna, certo?
+
+216
+00:15:28,920 --> 00:15:32,320
+O momento de pó, eles experimentaram com diversos fatores de este listo,
+
+217
+00:15:32,320 --> 00:15:34,800
+número ou simplesmente ir variando,
+
+218
+00:15:34,800 --> 00:15:37,920
+é... manualmente os números, certo?
+
+219
+00:15:47,920 --> 00:15:51,920
+Com isso, nós obtemos 0,1 mil segundos.
+
+220
+00:15:51,920 --> 00:15:56,320
+Os podemos, então, rodar novamente o protocol de pinte,
+
+221
+00:15:56,320 --> 00:15:59,320
+de ser mais mais como você vê.
+
+222
+00:16:11,920 --> 00:16:12,920
+Certo?
+
+223
+00:16:12,920 --> 00:16:18,920
+E, em comparação, nós temos, aí, metade do tempo, na média, com o relógio.
+
+224
+00:16:21,920 --> 00:16:30,920
+E aí, para algo que se avar, o que acontece?
+
+225
+00:16:30,920 --> 00:16:34,920
+Se você tente a executar essa mesma operação,
+
+226
+00:16:34,920 --> 00:16:38,920
+sem o enroll, certo?
+
+227
+00:16:38,920 --> 00:16:40,920
+Tem um caso 5 aqui.
+
+228
+00:16:40,920 --> 00:16:54,920
+Então, senho enroll, a gente consegue chegar.
+
+229
+00:16:54,920 --> 00:16:59,920
+A baixa do opesse vê na média, certo?
+
+230
+00:16:59,920 --> 00:17:04,920
+Mas não, não estão rápido quanto fazendo um enroll, inclusive.
+
+231
+00:17:04,920 --> 00:17:11,920
+Também ali no range de metade do tempo em relação a esse schedule sem um enroll.
+
+232
+00:17:14,920 --> 00:17:20,920
+A gente pode deixar também a relação, esse caso 5.
+
+233
+00:17:20,920 --> 00:17:35,920
+E aí, também, um pouco mais rápido, mas o melhor tempo,
+
+234
+00:17:35,920 --> 00:17:40,920
+está na mesma ordem ali do nosso schedule 4.
+
+235
+00:17:40,920 --> 00:17:44,920
+Aqui na média, no caso.
+
+236
+00:17:44,920 --> 00:17:54,920
+Então, nós aplicamos o enroll para tanto possibilidade
+
+237
+00:17:54,920 --> 00:18:03,320
+algumas optimizações do nosso código, como também, eliminar o MOOCs dentro do meu
+
+238
+00:18:03,320 --> 00:18:05,920
+internal para o nosso próprio�.
+
+239
+00:18:07,920 --> 00:18:10,920
+Como eu queria recomendar, eu deixo para vocês,
+
+240
+00:18:10,920 --> 00:18:14,920
+então, a descrição de schedule em do relâde, como também,
+
+241
+00:18:14,920 --> 00:18:20,920
+há um momento ponto em de relâde, defini a definição de relacionadas às funk,
+
+242
+00:18:20,920 --> 00:18:29,920
+que vai contei as definições do relâde, as duas definições do relâde, para enroll.
+
+243
+00:18:29,920 --> 00:18:33,920
+Muito obrigado pela atenção de vocês e até a próxima.
+

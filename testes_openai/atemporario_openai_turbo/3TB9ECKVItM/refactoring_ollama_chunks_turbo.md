@@ -1,0 +1,85 @@
+Olá, sejam muito bem-vindos a mais uma aula do curso de linguagem de programação específica para IA. Hoje iremos explorar mais alguns conceitos de scheduling. O caso do conceito de hoje será o unroll.
+
+Ele, como a gente viu naquele exemplo didático com a geração de números de Fibonacci, pode ser utilizado para diminuir o número de iterações a custo do tamanho do corpo do loop. Então nós vamos aumentar o corpo do loop a fim de diminuir o número de iterações.
+
+A gente viu que ele tem um efeito de como se executasse múltiplas iterações em o que seria uma só no loop transformado. Ele pode ser útil para quando a gente tem pixels que manipulam dados incomuns. E um padrão específico que a gente vai ver frequentemente, que às vezes é útil utilizar o unroll, é quando a gente tem mais de um canal e quer simplesmente executar o assign desses canais, certo? Em sequência, então um atrás do outro sem uma criação de um novo loop.
+
+Ele tem duas sintaxes, a primeira delas é só passando uma var para dentro desse unroll, e a outra var em um fator. Ele vai ser utilizado com bound ou com split. No caso aqui, quando a gente quer fazer um unroll, por exemplo, de uma var que não sejam esses canais, a gente normalmente precisa fazer um split dessa var, certo? E a gente faz o split com um fator e depois aplica um roll nessa var que vai estar ali bem interna no alinhamento do loop, certo?
+
+Uma outra opção é você simplesmente fazer essa sintaxe aqui, emroll, passando o var e depois o fator. A diferença é que você vai ficar escondido o split, certo? Ele vai esconder esse split.
+
+Para o exemplo dos canais, o que a gente vai estar utilizando é esse bound aqui. Então, nós vamos, na verdade, utilizar tanto o reorder como o bound, para mover os canais para a parte mais interna do loop, certo?
+
+O bound, ele vai dizer para o relide que a minha variável do canal é limitada entre 0 a 3, certo? Então, ali, RGB, a gente sempre vai trabalhar em relide com o mínimo e o extent, que é a extensão daquela dimensão. Então, a gente vai passar para o bound a variável, o mínimo, que vai ser 0, e o extent, que vai ser 3.
+
+Aqui são 3 canais. E a partir disso, diferentemente da sintaxe com o split, a gente sabe os limites que esse loop vai percorrer. A gente sabe quais os limites da minha variável. Então, a gente utiliza o bound para passar essa informação para o onroll depois.
+
+No caso onde a gente não sabe a dimensão do loop, que vai ser nos casos onde a gente tem uma variável que não seja aquela dos canais, por exemplo, a gente vai ter que estar utilizando essa sintaxe com o splitting.
+
+Iremos agora verificar na prática a utilização do onroll. Eu tenho aqui um exemplo onde eu estou aplicando um efeito cepia em uma imagem, certo? Então, nós temos um efeito de falta antiga sendo aplicado.
+
+Primeiramente, mostrando o protótipo de Python para a gente ter um guia da temporização, certo? Do runtime dessa pipeline. Eu vou rodar o protótipo aqui. E nós temos, em Python, A velocidade de 20, no caso ele está demorando 23 milissegundos, no caso 24 milissegundos, para completar a execução da pipeline na média.
+
+No pior caso, está em 46 milissegundos, e no melhor caso, 20 milissegundos. A pipeline é simples, ela só envolve multiplicar os canais da imagem por diversos fatores, certo? Cada canal novo, ele vai ter um conjunto de três fatores associados a ele, certo?
+
+Então, cada novo canal da minha imagem, cada novo RGB, é uma ponderação dos RGB anteriores, iniciais. Após isso, eu faço o merging desses canais, converto para Uint8 a versão clipada dele, ou seja, mantida ali entre 0 e 35.
+
+Eu tenho aqui também um protótipo implementado em C++, com OpenCV. Então, é a nossa segunda referência de tempo, e nós esperamos um tempo pouco menor de execução em relação ao Python. Já obtemos aqui o resultado do OPCV, está igualzinho ao do Python, e no caso, a gente tem aqui 0,3 milissegundos na média, certo?
+
+Em comparação ao Python, com seus 23 milissegundos. No melhor caso, a gente tem 0,19 milissegundos, e no pior caso, 4 milissegundos, certo? Então, vai bem mais rápido que o Python.
+
+Vamos então ver se a gente consegue chegar mais rápido com o Rayleigh. Então, eu tenho aqui o Python implementado no Rayleigh, com o Generator, e com um parâmetro aqui para selecionar o schedule customizado, certo? E aí, o que a gente tem aqui é esse Mux, e aí, no caso, a gente vai poder observar uma das maiores utilidades do Unroll, que é a eliminação do Select para fazer esse Assign dos canais, certo?
+
+Então, a gente tem um Mux aqui, a gente consegue converter, ao invés de ter essa multiplexação, então, a gente vai converter isso daqui para executar o Assign um depois do outro ali, dentro do loop mais interno da minha pipeline.
+
+Então, eu tenho aqui primeiro, a utilização com o paralelismo apenas sendo aplicado no Y, dessa imagem. Então, nós vamos verificar ainda sem o Unroll, certo? Uma aplicação mais simples de Skyload.
+
+Ao executar isso aqui, a gente obtém um código também bem mais rápido que o Python, mas mais lento que o OpenCV. Inclusive, o melhor tempo dessa execução em Rayleigh é estar assinando a média em relação ao OpenCV, certo?
+
+Nós podemos, então, agora verificar o StateWinFile, que eu tenho já carregado aqui, eu só preciso recarregar essa página. Vamos fechar o Assembly.
+
+E verificar aqui que a gente tem esse Mox aqui dentro, internamente no... A gente tem aqui o Y sendo executado em paralelo. E dentro do X, na parte mais interna, a gente tem... esse Mox aqui, certo?
+
+Então, vamos remover esse Mox. Como a gente viu nos slides, a gente tem que utilizar algumas diretivas junto do meu Unroll, para poder ter o comportamento que nós esperamos.
+
+A primeira delas, como mencionado, é o Reorder. Nós precisamos mover os canais para a parte mais interna do loop, certo? A gente tem que garantir que eles estejam na parte mais interna do alinhamento de loop.
+
+Seguinte a isso, utilizamos o Bound para estabelecer os limites da minha var, que é os canais. E aí eu tenho o mínimo, que é 0, e a extensão dessa minha dimensão, que vai ser o 3.
+
+Então, a gente vai de 0 até 2, né? 0, 1 e 2. E, seguinte a isso, nós executamos o Unroll. Eu posso remover isso aqui, para que a gente veja um efeito que pode ser observado quando vocês estiverem utilizando essas diretivas, certo?
+
+Então, ao rodar o caso 1, a gente tem ainda uma papelada um pouco mais lenta, inclusive. E ao verificar a atualização aqui do statement file, vou aumentar um pouco. nós temos o seguinte, são três versões aqui da minha execução, certo? Uma para cada um daqueles canO canal, como o loop mais externo. Estamos reexecutando agora com o compute root, para ver o que o Unrolli está fazendo por padrão com essa nossa patline. Eu vou recarregar o meu statement file. E como esperado, o C, o canal, ele está aqui no loop mais externo.
+
+Então, ao fazer o Unrolli, a gente estabelece esse extent aqui com o bound, certo? E ao fazer o Unrolli sem o reorder, ele vai desenrolar essa computação em três loops diferentes, certo? Então, três loops por toda a imagem diferente.
+
+Vamos, então, remover e passar a fazer o Reorder junto com as duas outras diretivas. A gente tem um pouco mais rápido do que o nosso teste inicial com aqueles três loops, certo? Mas ainda não tão rápido quanto o Paralelo e também não tão rápido quanto o OpenCV.
+
+Vamos, então, prosseguir com o scheduling dessa pipeline, mas antes, passando para verificar a nova estrutura obtida no statement file. Então, nós temos aqui que temos o loop mais externo, image output pelo Y, depois pelo X, e os três canais sendo feito o assign em sequência um após o outro.
+
+Iremos, então, passar para o caso 2, que é a aplicação do paralelismo após esse Unroll, certo? Dessa forma com o Reorder e o Bounding. Achamos agora um aumento na velocidade em comparação, inclusive, ao schedule 0 aqui, onde a gente chegou a 0.29 milissegundos, com o OpenCV aqui já na média já atingindo um valor menor, certo?
+
+Inclusive, o pior caso também já tem uma boa diferença. Nós podemos prosseguir com nosso scheduling, testando um splitting e executando o paralelismo a partir desse splitting do Y, certo? Então, ao invés de paralelizar a var Y pura, a gente vai fazer um splitting nela antes de aplicar o paralelismo.
+
+E, novamente, como antes, eu estou utilizando o VectorSize obtido com a função NaturalVectorSize do Relied como uma guia para a minha experimentação. Ele é só um valor que eu posso rapidamente experimentar vários fatores dele como uma guia, certo?
+
+No caso aqui, eu estou multiplicando ele por 8. Então, nós vamos executar aqui o caso 3. Ele é um pouco mais lento que a versão anterior. A gente pode experimentar também, modificar esse VectorSize e ver se a gente obtém um tempo um pouco melhor.
+
+Ele está um pouco mais rápido, mas ainda assim não superou o nosso Scenario 2. Nós vamos observar o Scenario 4, onde a gente encadeia o Splitting com a vetorização, certo? O paralelismo com a vetorização.
+
+Nós executamos o nosso Unroll, fazemos o Splitting do Y e aplicamos o paralelismo na variável mais externa e fazemos o Splitting do X e aplicamos a vetorização na variável mais interna, certo?
+
+Normalmente, a gente pode experimentar com diversos fatores desse número ou simplesmente ir variando manualmente os números, certo? Com isso, nós obtemos 0,1 milissegundos.
+
+Nós podemos, então, rodar novamente o Prototipin C++ como vou perceber. Certo? E em comparação, nós temos aí metade do tempo na média com o Relight.
+
+E aí, para observar o que acontece se você tenta executar essa mesma operação sem o Unroll, certo? Eu tenho o caso 5 aqui. Então, sem o Unroll, a gente consegue chegar abaixo do OpenCV na média, certo?
+
+Mas, não tão rápido quanto fazendo o Unroll. Inclusive, é também ali no range de metade do tempo em relação a esse Schedule sem o Unroll.
+
+A gente pode testar também a reordenação, nesse caso 5. Que é também um pouco mais rápido, mas o melhor tempo está na mesma ordem ali do nosso Schedule 4. E na média, no caso.
+
+Então, nós aplicamos o Unroll para tanto possibilitar algumas otimizações do nosso código, como também eliminar o Mux dentro do loop mais interno para o nosso pipeline.
+
+Como leitura recomendada, eu deixo para vocês tanto a lição de Scheduleing do Relide, como também novamente o ponto em que o Relide define ali definições relacionadas às funks, certo?
+
+Que vai conter as

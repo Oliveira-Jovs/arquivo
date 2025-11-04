@@ -1,0 +1,59 @@
+Olá, seja muito bem-vindos a mais uma aula do curso de linguagem de programação específica para IAR. Hoje, podemos explorar alguns conceitos de Skylin. O caso em questão é o conceito de hoje será o unroll. Como vimos no exemplo idático com a geração de linguagem de fibonate, pode ser utilizado para diminuir o número de iterações à custa do tamanho do corpo do loop. Nós vamos aumentar o corpo do loop, afinal, o número de iterações.
+
+A gente pode ver que ele tem um efeito como se executasse múltiplas iterações em o que seria uma só no loop transformado. Ele pode ser útil para quando a gente tem pixels que manipulam dados em comuns. Um padrão específico que a gente vai ver frequentemente é quando a gente tem mais de um canal e quer se pertencer à reputação desses canais, certo? Em sequência, então, um atragem de outro sem uma criação de um novo loop.
+
+Ele tem duas sintaxes: a primeira delas é só baixando um parâmetro para dentro desse unroll. E a outra variável é um fator, que vai ser utilizado com um bound e com split. No caso aqui, quando a gente quer fazer um roll, por exemplo, de uma variável que não seja os canais, a gente normalmente precisa fazer um split dessa variável, certo? E a gente faz um split com um fator e depois aplica um roll nessa variável, que vai estar ali bem interna no alinhamento do loop, certo?
+
+Uma outra opção é você se perder fazer essa sintaxe aqui em roll passando o parâmetro e depois o fator. A diferença é que você vai ficar escondido o split, certo? Ele vai esconder esse split. Para o exemplo dos canais, a gente vai estar utilizando esse bound aqui. Então, nós vamos utilizar tanto o reward como o bound para mover os canais para a parte mais interna do loop, certo?
+
+O bound vai dizer por relied que a minha variável do canal é limitada entre 0 e 3, certo? Então, a gente sempre vai trabalhar em relied com o mínimo e o extente, que é o roll. A extensão daquela dimensão. Então, a gente vai passar para o bound a variável, o mínimo que vai ser 0 e o extente que vai ser 3, que são 3 canais.
+
+E a partir disso, definitivamente das taxas ali com o split, a gente sabe os limites que estão dentro do que vai percorrer. A gente sabe qual é o limite da minha variável. Então, a gente tem o utilizado o bound para passar essa informação para o roll depois.
+
+No caso em que a gente não sabe a dimensão do loop, que vai ser nos casos, a gente tem uma variável que não seja aquela das canais, por exemplo, a gente vai estar utilizando essa sintaxe com o splitting. Agora vamos verificar na prática a utilização do roll.
+
+Eu tenho aqui um exemplo onde eu estou aplicando um efeito em uma imagem, certo? Então nós temos um efeito de falta antiga sendo aplicado. Primeiramente, mostrando o protótipo de Python para a gente ter uma ideia da temporização, certo? Do runtime dessa pipeline, eu vou rodar o protótipo aqui.
+
+E nós temos em Python: a velocidade dele é de 20; no caso ele está demorando 23 mil segundos, no caso 24 mil segundos para completar a execução da pipeline na média; no pior caso, está em 46 mil segundos e no melhor caso 20 mil segundos. A pipeline ela é simples, ela só envolve multiplicar os canais da imagem por diversos fatores, certo?
+
+Cada canal novo ele vai ter constituintes 3 fatores associados a ele, certo? Então cada novo canal da minha imagem, cada novo RGB, é uma ponderação dos RGB anteriores. Após isso eu faço merge nesses canais, converto para a efeito a versão clipada dele, ou seja, a mantida entre 0 e 0,3 e 5.
+
+Eu tenho aqui também um protótipo; então eu estou em também estar de ser mais rápido com o OpenCV. Então é a nossa segunda referência de tempo, e nós esperamos um tempo pouco menor de execução em relação ao Python. Já o que temos aqui, o resultado do OpenCV está igualzinho ao do Python, e no caso a gente tem aqui 0,3 mil segundos na média, certo?
+
+Em comparação ao Python, com seus 23 mil segundos; no maior caso a gente tem 0,19 mil segundos e não pior caso 4 mil segundos. Então é bem mais rápido que o Python. Vamos ver se a gente consegue chegar mais rápido com o ReliR.
+
+Então eu tenho aqui para falar implementada no ReliR com um gerador e com um parâmetro para selecionar o Skydoll somizado, certo? E aí, o que a gente tem aqui é esse Mox. E aí, no caso a gente vai poder observar uma das maiores utilidades do Unroll, que é a eliminação do Select para fazer esse a-sign dos canais.
+
+Então a gente tem um Mox aqui e a gente consegue converter a gente de... essa multiplicação é só convertir isso daqui para executar o a-sign um depor de outro ali dentro do loop mais interno da minha empacotadora. Então eu tenho aqui primeiro a utilização com o paralelismo apenas sendo aplicado no IPSON.
+
+Então nós vamos...Verificar ainda sem o Unroll, certo? Uma aplicação mais simples de Skydoll. A executa isso aqui, a gente obtém um código também bem mais rápido que o Python, mais lento que o OpenCV, inclusive o melhor tempo dessa execução. Em Relight, está a simenda médio em relação ao OpenCV, certo?
+
+Nós podemos, então, agora verificar o Setum File, que eu tenho já carregado aqui, só preciso carregar essa página. Vamos fechar o Assemble e verificar aqui, naqueles que a gente tem esse Mox aqui dentro internamente no... A gente tem que o OpenCV não se conectar em paralelo e dentro do Nox, né? Pato mais interno a gente tem esse Mox aqui, certo?
+
+Então, vamos remover esse Mox. Como as devils, as devils, a gente tem que utilizar algumas diretivas junto do meu Unroll para poder ter o comportamento que nós esperamos. A primeira delas, como mencionada, é o Reorder. Nós precisamos mover os canais para a parte mais interna do loop, certo? A gente tem que garantir que eles estejam na parte mais interna do aninhamento do loop.
+
+O seguinte é isso, utilizamos um Bound para estabelecer os limites da minha VAR, que é o channel. E aí, eu tenho o mínimo que é zero e a extensão dessa minha dimensão, que vai ser o 3, então, a gente vai dizer zero até 2, zero com 1 e 2.
+
+E, seguinte é isso, nós executamos o Unroll. Eu posso remover isso aqui, porque a gente veja um efeito que pode ser observado quando vocês tiverem utilizando saídendetivas, certo? Então, ao rodar o caso um, a gente tem ainda um apapelá, um pouco mais interinclusive.
+
+E ao verificar a atualização do Statement File, vamos tentar um pouco. Nós temos o seguinte, três versões aqui do Amp da minha execução, certo? Então, é como se o canal era considerado o C, o canal como o loop mais externo. Então, nós vamos fazer o que o leilá está fazendo com o padrão com essa nossa patilá.
+
+Eu vou recarregar o meu Statement File. E como esperado o C, o canal está aqui no loop mais externo. Então, ao fazer o Unroll, a gente estabelece esse extente aqui, com o bão, certo? E ao fazer o Unroll, sim, o Reorder, ele vai desenrolar essa computação em três grupos diferentes, certo?
+
+Então, três grupos por toda a imagem diferente. Vamos então remover e passar a fazer o Unroll junto com as duas outras objetivas. Ok, a gente tem um pouco mais rápido que o nosso teste lá inicial com aqueles três dupe, certo? Mas ainda não estão rápido contra o paralelo e também não com o rápido contra o OpenCV.
+
+Vamos então procedir com o scheduling dessa papilá, mas antes passando para verificar a nova estrutura obtida no Statement File. Então, nós temos aqui que temos o loop mais externo em média o tipo de Pell X, depois pelo X, e os três canais sendo feito o assigned em sequência, uma prois ou outra.
+
+E vamos então passar para o caso dois, que é a aplicação do paralelismo após esse Unroll, certo? E, novamente, como antes, estou utilizando o Vector Size, obtido com a função Natural Vector Size do Relage, como a dia para mim, experimentação. Ele falou um valor que eu posso rapidamente experimentar vários fatores dele, como uma guia, certo?
+
+O caso aqui estou explicando ele por 8. Então, nós vamos executar aqui o caso 3. Era um pouco mais lento que a versão de Rewo. Pode experimentar, então, em modificar esse Vector Size, que o que temos é um tempo um pouco melhor. Então, um pouco mais rápido, mas ainda assim, não superou nosso Skyroll 2.
+
+Nós vamos observar o Skyroll 4, onde a gente encadeia o Splitting com a virtualização, certo? Paralelismo com a virtualização. Nós executamos o Unroll, fazemos o Splitting do Ipsum, e aplicamos o Paralelismo na variável mais externa, e fazemos o Splitting do X, e aplicamos a virtualização na variável mais interna, certo?
+
+Alguém, a gente pode experimentar com diversos fatores desse número, você pode variar os números, certo? Com isso nós obtemos 0,1 ms, nós podemos então rodar novamente o Prototpinho, ser mais e mais, como eu percebe. E, em comparação, nós temos metade do tempo na média com o Relide.
+
+E, para observar, o que acontece, se você tenta executar essa mesma operação sem o Unroll, certo? Eu tenho um caso 5 aqui. Então, sem o Unroll, a gente consegue chegar a baixo do OpenCV na média, certo? Mas não tão rápido quanto fazendo o Unroll, inclusive, também ali no range de metade do tempo em relação a esse Skyroll sem o Unroll.
+
+A gente pode ter xato também a reordinação, esse caso 5. E, também, um pouco mais rápido, mas o melhor tempo está na mesma ordem ali do nosso Skyroll 4. E, na média, no caso. Então, nós aplicamos o Unroll para tanto possibilitar algumas optimizações do nosso código, como também eliminar o Moops dentro do Loops mais interno para a sua pipeline.
+
+Como o leite vai recomendar, eu deixo para vocês tanto a lição de Skyroll em do Relide, como também, novamente o ponto em de Relide definia definições relacionadas às FUNCES, certo? Que vai contê as definições do Rel
